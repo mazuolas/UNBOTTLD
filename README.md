@@ -38,21 +38,23 @@ UNBOTTLD is a single page web application inspired by UNTAPPD built using Ruby o
 
 **Objective:** Functioning rails project with front end authentication
 
-### Phase 2: Drinks CRUD (2 days)
+### Phase 2: Drinks and Breweries CRUD (2 days)
 
 **Objective:** Drinks can be created, read, edited and destroyed through the API.
 
 ### Phase 3: Checkins / reviews (2 days)
 
-**Objective:** Drinks can be added to a user's drink list with reviews. Checkins appear on the review feed
+**Objective:** Drinks can be added to a user's drink list with reviews.
 
-### Phase 4: Profile (2 days)
+### Phase 4: Checkin feed
+
+**Objective** Checkins appear on the review feed
+
+### Phase 5: Profile (2 days)
 
 **Objective:** User profile that includes their drink list, a profile picture and stats about their drinks.
 
-### Phase 5: Final Styling (2 days)
 
-**Objective:** Have a completely styled full stack web application.
 
 ### Bonus Features(TBD)
 - [ ] Friendships
