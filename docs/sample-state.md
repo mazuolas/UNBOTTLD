@@ -1,7 +1,10 @@
 {
-  currentUser: {
-    id: 1,
-    username: 'mark'
+  session:{
+    currentUser: {
+      id: 1,
+      username: 'mark'
+    },
+    errors: []
   },
 
   drinks: {
