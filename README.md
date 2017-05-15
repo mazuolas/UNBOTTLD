@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://www.unbottld.herokuapp.com
 [trello]: https://trello.com/b/A7XVjaRF/unbottld
 
 ## MVP
