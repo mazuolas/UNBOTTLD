@@ -1,7 +1,11 @@
 # UNBOTTLD
 
-Heroku link
-trello link
+[Heroku link][heroku]
+
+[Trello link][trello]
+
+[heroku]: http://www.herokuapp.com
+[trello]: https://trello.com/b/A7XVjaRF/unbottld
 
 ## MVP
 
