@@ -1,8 +1,9 @@
 import React from 'react';
+import Index from './index';
 
 const App = () => (
   <div>
-    <h1>UNBOTTLD</h1>
+    <Index />
   </div>
 );
 
