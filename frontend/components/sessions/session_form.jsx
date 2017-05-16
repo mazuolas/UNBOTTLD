@@ -20,15 +20,14 @@ class SessionForm extends React.Component {
 
   handleForm(e){
     e.preventDefault();
-    this.props.handleForm({user: this.state}).then(null,
-    (error) => console.log(error))
+    this.props.handleForm({user: this.state})
   }
 
   render(){
     return (
       <div className='session-form'>
         <h1>{this.props.formType}</h1>
-        <h1>{this.props.errors}</h1>
+        <h1>{this.props.errors.join(', ')}</h1>
         <input
           onChange={ this.update('username') }
           value={ this.state.username}/>

@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => {
   const formType = ownProps.location.pathname.slice(1);
   const formAction = (formType === 'login') ? login : signup;
-  console.log(formAction);
   return ({
   handleForm: (user) => dispatch(formAction(user))
 })};
