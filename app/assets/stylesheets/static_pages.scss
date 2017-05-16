@@ -3,14 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
  .index {
    display: flex;
-   flex-direction: column;;
-   background: url('/assets/bottles.jpg');
-   background-size: cover;
-   background-repeat: no-repeat;
-   height: 100%;
-   width: 100%;
-   min-width: 900px;
-   min-height: 700px;
-   justify-content: center;
-   margin: auto;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  background: transparent image-url("bottles.jpg") top left no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  background-size: cover;
  }
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  margin: 10px 10px;
+}
