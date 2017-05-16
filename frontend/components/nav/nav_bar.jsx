@@ -11,13 +11,12 @@ class NavBar extends React.Component {
     e.preventDefault();
     this.props.logout();
   }
-  
+
   render(){
     return(
   <div className='nav-bar'>
 
     <div className='left-nav'>
-      <img></img>
       <NavLink className='nav-link'
         to='/breweries'>breweries</NavLink>
     </div>

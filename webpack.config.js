@@ -1,6 +1,7 @@
 var path = require("path");
 
 module.exports = {
+  'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
   context: __dirname,
   entry: "./frontend/Unbottld.jsx",
   output: {
