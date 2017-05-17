@@ -23,11 +23,11 @@ body {
 .icon {
   background: transparent image-url("bottle_logo.png") top left no-repeat;
   display: flex;
-  position: absolute;;
+  position: absolute;
   min-width: 100px;
   min-height: 120px;
   background-size: contain;
-  left: 0;
+  left: -70px;
 }
 
 //unbottld
@@ -35,7 +35,7 @@ body {
   font-weight: normal;
   font-size: 100px;
   position: relative;;
-  margin: 0 6%;
+  margin: 0 70px;
   padding: 0;
   color: white;
 
@@ -155,4 +155,55 @@ button {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+button:hover{
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 0 0 grey, 0 -1px 0 grey, 0 1px 0 grey, -1px 0 0 grey;
+
+}
+
+
+//nav bar
+.nav-bar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-around;
+  background: gold;
+  width: 100%;
+  padding: 0 0;
+}
+.nav-icon{
+  left: 0;
+  position: relative;
+  min-height: 50px;
+  min-width: 40px;
+}
+
+.left-nav {
+  display: flex;
+  padding-left: 20%;
+}
+
+.right-nav {
+  display: flex;
+  padding-right: 20%;
+}
+
+.nav-link {
+  color: black;
+  border: none;
+  padding-top: 10px;
+}
+.left{
+  padding-left: 0;
+  margin-left: 0;
+}
+.nav-link:hover {
+  color: white;
+  background-color: gold;
+  text-shadow: 1px 0 0 grey, 0 -1px 0 grey, 0 1px 0 grey, -1px 0 0 grey;
 }

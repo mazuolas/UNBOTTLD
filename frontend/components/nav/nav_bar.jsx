@@ -17,14 +17,17 @@ class NavBar extends React.Component {
   <div className='nav-bar'>
 
     <div className='left-nav'>
-      <NavLink className='nav-link'
-        to='/breweries'>breweries</NavLink>
+      <div className='icon nav-icon'></div>
+      <NavLink className='index-link nav-link left'
+        to='/bottles'>bottles</NavLink>
     </div>
 
     <div className='right-nav'>
-      <NavLink className='nav-link'
+      <NavLink className='index-link nav-link'
         to={`/users/${this.props.user.id}`}>my profile</NavLink>
-      <button onClick={ this.logout }>logout</button>
+      <NavLink className='index-link nav-link'
+        onClick={ this.logout }
+        to={'/'}>logout</NavLink>
     </div>
 
   </div>
