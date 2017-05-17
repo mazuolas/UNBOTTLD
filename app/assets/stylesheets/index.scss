@@ -28,6 +28,8 @@ body {
   min-height: 120px;
   background-size: contain;
   left: -70px;
+  -webkit-filter: invert(1);
+   filter: invert(1);
 }
 
 //unbottld
