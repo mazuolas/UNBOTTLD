@@ -2,7 +2,7 @@ class Api::DrinksController < ApplicationController
   def create
     @drink = Drink.new(drink_params)
     if @drink.save
-      render: show
+      render :show
     else
       render json: @drink.errors.full_messages, status: 422
     end
@@ -19,6 +19,7 @@ class Api::DrinksController < ApplicationController
 
   def edit
     find_drink
+    render :show
   end
 
   def show
@@ -26,7 +27,7 @@ class Api::DrinksController < ApplicationController
   end
 
   def index
-    @drinks = Drinks.all
+    @drinks = Drink.all
   end
 
   def destroy
