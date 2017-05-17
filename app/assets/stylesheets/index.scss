@@ -1,5 +1,6 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 .index {
@@ -8,7 +9,7 @@ body {
   justify-content: flex-start;;
   width: 100%;
   min-height: 100%;
-  background: transparent image-url("bottles.jpg") top left no-repeat;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), image-url("bottles.jpg") top left no-repeat;
   position: absolute;
   top: 0;
   right: 0;
@@ -16,7 +17,6 @@ body {
   left: 0;
   margin: 0;
   background-size: cover;
-
 }
 
 .session-form {
@@ -29,26 +29,24 @@ body {
 
 .page-title {
   font-weight: normal;
-  font-size: 150px;
+  font-size: 100px;
   position: relative;;
-  margin: 0 10%;
+  margin: 0 5%;
   padding: 0;
-  color: black;
-  opacity: 0.8;
+  color: white;
 
 }
 
 
 .description {
   font-weight: normal;
-  font-size: 50px;
+  font-size: 40px;
   position: relative;;
-
-  margin: 5% auto;
+  margin: 0 10%;
   padding: 0;
   color: #4A2B03;
   padding: 10px;
-  text-shadow: 1px 0 0 grey, 0 -1px 0 grey, 0 1px 0 grey, -1px 0 0 grey;
+  // text-shadow: 1px 0 0 grey, 0 -1px 0 grey, 0 1px 0 grey, -1px 0 0 grey;
 
 }
 
@@ -58,14 +56,22 @@ body {
   font-size: 25px;
   text-decoration: none;
   padding: 0 10px;
-  background-color: navy;
   margin: 0 5px;
-  border: 1px solid black;
-  color: yellow;
-  opacity: .5;
+  border: 3px solid white;
+  color: white;
+  opacity: 1;
+}
+
+.index-link:hover {
+  background-color: white;
+  color: black;
 }
 
 .link-container {
   display: flex;
   margin: 0 auto;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+
 }
