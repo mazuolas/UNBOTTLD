@@ -16,8 +16,8 @@ name           | string    | not null
 description    | text      | not null
 image_url      | string    | not null
 brewery_id     | integer   | not null, indexed
-abv            | integer   | not null
-average_rating | integer   | not null
+abv            | float     | not null
+average_rating | float     | not null
 
 ## checkins
  column name    | data type | details               
