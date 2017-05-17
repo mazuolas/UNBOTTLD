@@ -16,6 +16,14 @@ drink1 = Drink.create(
   abv: 11.0,
   average_rating: 4.16
 )
+drink2 = Drink.create(
+  name: "Funk",
+  brewery_id: 1,
+  image_url: 'http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_220728.jpg',
+  description: "The traditional American Wheat Ale serves as a solid baseline, but we couldn’t be content until we tore the roof off this sucker! Funk, our Blueberry Citrus Wheat Ale, sets the rhythm with a soulful fusion of American wheat and hops, before unleashing a stunning encore with big notes of blueberry and Meyer lemon. It’s no jive, you’ll just dig it!",
+  abv: 5.0,
+  average_rating: 3.59
+)
 
 brewery1 = Brewery.create(
   name: 'DuClaw',

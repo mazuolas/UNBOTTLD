@@ -27,7 +27,7 @@ class Api::DrinksController < ApplicationController
   end
 
   def index
-    @drinks = Drink.all
+    @drinks = Drink.all.includes(:brewery)
   end
 
   def destroy
