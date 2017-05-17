@@ -25,16 +25,22 @@ class SessionForm extends React.Component {
 
   render(){
     return (
-      <div className='session-form'>
-        <h1>{this.props.formType}</h1>
-        <h1>{this.props.errors.join(', ')}</h1>
-        <input
-          onChange={ this.update('username') }
-          value={ this.state.username}/>
-        <input type='password'
-          onChange={ this.update('password') }
-          value={ this.state.password }/>
-        <button onClick={ this.handleForm }>{ this.props.formType }</button>
+      <div className='session-form-page'>
+        <div className='form-background'></div>
+        <div className='session-form'>
+          <div className='form-icon'></div>
+          <h1 className='form-title'>{this.props.formType}</h1>
+          <input
+            onChange={ this.update('username') }
+            value={ this.state.username}
+            placeholder='Username'/>
+          <input type='password'
+            onChange={ this.update('password') }
+            value={ this.state.password }
+            placeholder='Password'/>
+          <button onClick={ this.handleForm }>{ this.props.formType }</button>
+        </div>
+        <h1 className='errors'>{this.props.errors.join(', ')}</h1>
       </div>
     )
   }
