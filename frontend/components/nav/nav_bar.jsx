@@ -17,7 +17,7 @@ class NavBar extends React.Component {
   <div className='nav-bar'>
 
     <div className='left-nav'>
-      <div className='icon nav-icon'></div>
+      <div className='nav-icon'></div>
       <NavLink className='index-link nav-link left'
         to='/bottles'>bottles</NavLink>
     </div>

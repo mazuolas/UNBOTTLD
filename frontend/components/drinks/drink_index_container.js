@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getAllDrinks: dispatch(getAllDrinks())
+  getAllDrinks: () => dispatch(getAllDrinks())
 });
 
 export default connect(

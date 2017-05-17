@@ -21,7 +21,7 @@ export const receiveDrink = drink => ({
 
 export const receiveAllDrinks = drinks => ({
   type: RECEIVE_ALL_DRINKS,
-  drink
+  drinks
 });
 
 export const createDrink = drink => dispatch => (
