@@ -24,7 +24,7 @@ class NavBar extends React.Component {
 
     <div className='right-nav'>
       <NavLink className='index-link nav-link'
-        to={`/users/${this.props.user.id}`}>my profile</NavLink>
+        to={`/users/${this.props.user.id}`}>{this.props.user.username}</NavLink>
       <NavLink className='index-link nav-link'
         onClick={ this.logout }
         to={'/'}>logout</NavLink>
