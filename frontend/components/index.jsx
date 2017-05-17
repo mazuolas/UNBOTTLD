@@ -10,10 +10,12 @@ class Index extends React.Component {
 
     return (
       <div className='index'>
-        <h1>UNBOTTLD</h1>
-        <p>Find your favorite bottle</p>
-        <Link className="index-link" to="/signup">sign up</Link>
-        <Link className="index-link" to="/login">login</Link>
+        <h1 className='page-title'>UNBOTTLD</h1>
+        <p className='description'>Find your favorite bottle</p>
+        <div className='link-container'>  
+          <Link className="index-link" to="/signup">sign up</Link>
+          <Link className="index-link" to="/login">login</Link>
+        </div>
       </div>
     )
   }
