@@ -3,11 +3,14 @@ import SessionForm from './session_form';
 import { login, signup } from '../../actions/session_actions';
 
 
-const mapStateToProps = (state, ownProps) => ({
-  errors: state.session.errors,
-  formType: ownProps.location.pathname.slice(1)
-});
-
+const mapStateToProps = (state, ownProps) => {
+  let formType = ownProps.location.pathname.slice(1)
+  formType = (formType === 'signup')? 'sign up' : 'log in';
+  return ({
+    errors: state.session.errors,
+    formType: formType
+  });
+}
 const mapDispatchToProps = (dispatch, ownProps) => {
   const formType = ownProps.location.pathname.slice(1);
   const formAction = (formType === 'login') ? login : signup;

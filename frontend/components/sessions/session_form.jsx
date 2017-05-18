@@ -34,20 +34,26 @@ class SessionForm extends React.Component {
       <div className='session-form-page'>
         <div className='form-background'></div>
         <div className='session-form'>
-          <div className='form-icon'></div>
-          <h1 className='form-title'>{this.props.formType}</h1>
-          <input
-            onChange={ this.update('username') }
-            value={ this.state.username}
-            placeholder='Username'/>
-          <input type='password'
-            onChange={ this.update('password') }
-            value={ this.state.password }
-            placeholder='Password'/>
+          <h1 className='form-title'>UNBOTTLD</h1>
+          <h2 className='form-subtitle'>Find Bottles</h2>
+          <h1 className='errors'>{this.props.errors.join(', ')}</h1>
+          <div className='input-box'>
+            <i className="material-icons user-icon">account_circle</i>
+            <input
+              onChange={ this.update('username') }
+              value={ this.state.username}
+              placeholder='Username'/>
+          </div>
+          <div className='input-box'>
+            <i className="material-icons lock-icon">lock_outline</i>
+            <input type='password'
+              onChange={ this.update('password') }
+              value={ this.state.password }
+              placeholder='Password'/>
+          </div>
           <button onClick={ this.handleForm }>{ this.props.formType }</button>
           <button onClick={ this.setGuest }>login as guest</button>
         </div>
-        <h1 className='errors'>{this.props.errors.join(', ')}</h1>
       </div>
     )
   }

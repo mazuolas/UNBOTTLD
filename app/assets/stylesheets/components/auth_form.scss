@@ -1,4 +1,6 @@
-.form-background{
+@import 'base/colors.scss';
+
+.form-background {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -16,7 +18,7 @@
 
 }
 
-.session-form-page{
+.session-form-page {
   display: flex;
   justify-content: center;
 
@@ -37,46 +39,78 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  width: 300px;
-  height: 375px;
-  padding: 0px;
+  padding: 40px;
   top: 20%;
-
 }
 
 .errors {
   color: red;
-  position: fixed;
-  font-size: 15px;
-  background-color: black;
+  font-size: 12px;
   padding: 10px;
 }
 
 .form-title {
   font-size: 50px;
-  margin: 0 0 50px 0;
+  margin: 0;
   padding: 0;
   text-transform: uppercase;
+  color: $gold;
+  font-weight: bolder;
+}
+
+.form-subtitle {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $gold;
+  position: relative;
+  bottom: 10px;
 }
 
 input{
   margin: 10px;
   margin-top: 0;
+  border: 1px solid $grey;
+  border-radius: 4px;
+  padding: 6px 8px 6px 36px;
 }
 button {
-  margin: 10px;
-  background: gold;
+  display: flex;
+  margin: 5px;
+  background: $gold;
   color: white;
   border: none;
-  font-size: 20px;
-  text-transform: uppercase;
+  padding: 12px;
+  font-size: 18px;
+  text-transform: capitalize;;
   font-weight: bold;
-  width: 250px;
+  width: 300px;
+  border-radius: 4px;
+  justify-content: center;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
-  color: white;
-  text-shadow: 1px 0 0 grey, 0 -1px 0 grey, 0 1px 0 grey, -1px 0 0 grey;
+  background-color: $darkgold;
 
+}
+.input-box {
+  display: flex;
+  position: relative;
+}
+
+.user-icon {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: $grey;
+  border-right: 1px solid $grey;
+  padding-right: 3px;
+}
+.lock-icon {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: $grey;
+  border-right: 1px solid $grey;
+  padding-right: 3px;
 }
