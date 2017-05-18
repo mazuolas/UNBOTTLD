@@ -1,0 +1,51 @@
+//nav bar
+.nav-bar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-around;
+  background: gold;
+  width: 100%;
+  padding: 0 0;
+}
+.nav-icon{
+  background: transparent image-url("bottle_logo.png") top left no-repeat;
+  display: flex;
+  background-size: contain;
+  left: 0;
+  position: relative;
+  min-height: 50px;
+  min-width: 40px;
+}
+
+.nav-icon:hover {
+  -webkit-filter: invert(1);
+   filter: invert(1);
+
+}
+
+.left-nav {
+  display: flex;
+  padding-left: 20%;
+}
+
+.right-nav {
+  display: flex;
+  padding-right: 20%;
+}
+
+.nav-link {
+  color: black;
+  border: none;
+  padding: 10px 0 0 0;
+}
+.left{
+  padding-left: 0;
+  margin-left: 0;
+}
+.nav-link:hover {
+  color: white;
+  background-color: gold;
+  text-shadow: 1px 0 0 grey, 0 -1px 0 grey, 0 1px 0 grey, -1px 0 0 grey;
+}
