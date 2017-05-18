@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user1 = User.create(username: 'mark', password: 'password')
+user2 = User.create(username: 'guest', password: 'supersecretguestpassword')
 
 drink1 = Drink.create(
   name: "Devil's Due",

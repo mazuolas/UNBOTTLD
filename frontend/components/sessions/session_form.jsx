@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     };
     this.update = this.update.bind(this);
     this.handleForm = this.handleForm.bind(this);
+    this.setGuest = this.setGuest.bind(this);
   }
 
   update(prop){
@@ -21,6 +22,11 @@ class SessionForm extends React.Component {
   handleForm(e){
     e.preventDefault();
     this.props.handleForm({user: this.state})
+  }
+
+  setGuest(e){
+    e.preventDefault();
+    this.props.guestLogin();
   }
 
   render(){
@@ -39,6 +45,7 @@ class SessionForm extends React.Component {
             value={ this.state.password }
             placeholder='Password'/>
           <button onClick={ this.handleForm }>{ this.props.formType }</button>
+          <button onClick={ this.setGuest }>login as guest</button>
         </div>
         <h1 className='errors'>{this.props.errors.join(', ')}</h1>
       </div>

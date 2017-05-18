@@ -12,9 +12,13 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => {
   const formType = ownProps.location.pathname.slice(1);
   const formAction = (formType === 'login') ? login : signup;
-
+  const guest = { user: {
+    username: 'guest',
+    password: 'supersecretguestpassword' }
+  };
   return ({
-  handleForm: (user) => dispatch(formAction(user))
+  handleForm: (user) => dispatch(formAction(user)),
+  guestLogin: () => dispatch(login(guest))
 })};
 
 export default connect(
