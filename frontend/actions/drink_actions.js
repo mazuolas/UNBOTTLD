@@ -4,9 +4,9 @@ export const RECEIVE_ALL_DRINKS = 'RECEIVE_ALL_DRINKS';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const REMOVE_DRINK = 'REMOVE_DRINK';
 
-export const receiveErrrors = errors => ({
+export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
-  errors
+  errors: errors.responseJSON
 });
 
 export const removeDrink = id => ({
@@ -27,7 +27,7 @@ export const receiveAllDrinks = drinks => ({
 export const createDrink = drink => dispatch => (
   DrinkUtil.createDrink(drink).then(
     drink => dispatch(receiveDrink(drink)),
-    errors => diapatch(receiveErrors(errors))
+    errors => dispatch(receiveErrors(errors))
   )
 );
 

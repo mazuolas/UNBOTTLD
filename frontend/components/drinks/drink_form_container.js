@@ -1,26 +1,34 @@
+import merge from 'lodash/merge';
 import { connect } from 'react-redux';
 import DrinkForm from './drink_form';
 import {
   createDrink,
   updateDrink,
   deleteDrink,
+  editDrink
   } from '../../actions/drink_actions';
 
-  const mapStateToProps = (state, ownProps) => ({
+
+const mapStateToProps = (state, ownProps) => {
+  let formType = ownProps.location.pathname.slice(9);
+  formType = (formType==='create') ? 'create' : 'edit';
+  return ({
     errors: state.drinks.errors,
-    formType: ownProps.location.pathname.slice(7)
+    formType: formType,
+    id: ownProps.match.params.id,
+  })
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const formType = ownProps.location.pathname.slice(9);
+  const formAction = (formType === 'create') ? createDrink : updateDrink;
+
+  return ({
+    handleForm: (drink) => dispatch(formAction(drink)),
+    deleteDrink: (id) => dispatch(deleteDrink(id)),
+    editDrink: (id) => dispatch(editDrink(id))
   });
-
-  const mapDispatchToProps = (diapatch, ownProps) => {
-    const formType = ownProps.location.pathname.slice(7);
-    const formAction = (formType === 'create') ? createDrink : editDrink;
-
-    return ({
-      handleForm: (drink) => dispatch(formAction(user)),
-      deleteDrink: (id) => dispatch(deleteDrink(id)),
-    });
-
-  };
+};
 
   export default connect(
     mapStateToProps,
