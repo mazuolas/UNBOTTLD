@@ -16,6 +16,7 @@ return (
       <AuthRoute path='/login' component={ SessionFormContainer } />
       <AuthRoute path='/signup' component={ SessionFormContainer } />
       <ProtectedRoute path='/bottles' component={ DrinkIndexContainer } />
+      <ProtectedRoute path='/home' component={ ()=><h1 style={{margin: '100px'}}>Home page not made yet :(</h1> } />
     </Switch>
   </div>
   );
