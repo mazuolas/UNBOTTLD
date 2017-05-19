@@ -17,7 +17,7 @@ const DrinkReducer = (state = {}, action) => {
       return merge({}, state, {errors: action.errors});
     case(REMOVE_DRINK):
       let newState = merge({}, state);
-      delete newState[id];
+      delete newState[action.id];
       return newState;
     default:
       return state;

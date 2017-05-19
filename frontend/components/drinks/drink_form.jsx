@@ -16,6 +16,7 @@ class DrinkForm extends React.Component {
     this.update = this.update.bind(this);
     this.handleForm = this.handleForm.bind(this);
     this.handleImage = this.handleImage.bind(this);
+    this.deleteDrink = this.deleteDrink.bind(this);
   }
 
   componentWillMount(){
@@ -41,11 +42,22 @@ class DrinkForm extends React.Component {
   }
 
   handleImage(image){
-    this.setState({ image_url: image.url })
+    this.setState({ image_url: image.url });
   }
 
+  deleteDrink(e){
+    e.preventDefault();
+    this.props.deleteDrink(this.props.id).then(
+      () => this.props.history.push('/bottles')
+    )
+  }
 
   render(){
+    let deleteButton = "";
+    if (this.props.formType === 'edit') {
+      deleteButton = <button onClick={ this.deleteDrink }>Delete</button>
+    }
+    
     return (
       <div className='drink-form'>
 
@@ -75,6 +87,7 @@ class DrinkForm extends React.Component {
           value={ this.state.abv }
           placeholder='ABV'/>
         <button onClick={ this.handleForm }>{ this.props.formType }</button>
+        {deleteButton}
       </div>
     )
   }
