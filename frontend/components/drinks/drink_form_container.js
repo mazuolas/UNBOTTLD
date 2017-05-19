@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 import { connect } from 'react-redux';
 import DrinkForm from './drink_form';
+import { createBrewery } from '../../actions/brewery_actions'
 import {
   createDrink,
   updateDrink,
@@ -26,7 +27,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     handleForm: (drink) => dispatch(formAction(drink)),
     deleteDrink: (id) => dispatch(deleteDrink(id)),
-    editDrink: (id) => dispatch(editDrink(id))
+    editDrink: (id) => dispatch(editDrink(id)),
+    createBrewery: (name) => dispatch(createBrewery(name))
   });
 };
 

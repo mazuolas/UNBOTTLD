@@ -9,7 +9,7 @@ class DrinkForm extends React.Component {
       name: '',
       description: '',
       image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/e_negate/v1495151026/white_bottle_dglppo.png',
-      brewery_id: 1,
+      brewery: '',
       average_rating: -1,
     };
 
@@ -36,9 +36,14 @@ class DrinkForm extends React.Component {
 
   handleForm(e){
     e.preventDefault();
-    this.props.handleForm({ drink: this.state }).then(
-      () => this.props.history.push('/bottles')
-    );
+    this.props.createBrewery(this.state.brewery).then(
+      (response) => (this.setState({brewery_id: response.id}))).then(
+        () => (
+      this.props.handleForm({ drink: this.state }).then(
+        () => this.props.history.push('/bottles')
+        )
+      )
+    )
   }
 
   handleImage(image){
