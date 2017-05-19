@@ -8,7 +8,7 @@ class DrinkForm extends React.Component {
     this.state = {
       name: '',
       description: '',
-      image_url: '',
+      image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/e_negate/v1495151026/white_bottle_dglppo.png',
       brewery_id: 1,
       average_rating: -1,
     };
@@ -57,11 +57,10 @@ class DrinkForm extends React.Component {
     if (this.props.formType === 'edit') {
       deleteButton = <button onClick={ this.deleteDrink }>Delete</button>
     }
-    
+
     return (
       <div className='drink-form'>
 
-        <h1 className='drink-form-title'>{this.props.formType} bottle</h1>
         <img className='drink-form-img' src={this.state.image_url} />
 
         <UploadButton className='upload' handleImage={this.handleImage}/>
@@ -71,11 +70,6 @@ class DrinkForm extends React.Component {
           onChange={ this.update('name') }
           value={ this.state.name }
           placeholder='Name'/>
-        <h3>Description</h3>
-        <textarea
-          onChange={ this.update('description') }
-          value={ this.state.description }
-          placeholder='Description'/>
         <h3>Brewery</h3>
         <input
           onChange={ this.update('brewery') }
@@ -86,6 +80,11 @@ class DrinkForm extends React.Component {
           onChange={ this.update('abv') }
           value={ this.state.abv }
           placeholder='ABV'/>
+        <h3>Description</h3>
+        <textarea
+          onChange={ this.update('description') }
+          value={ this.state.description }
+          placeholder='Description'/>
         <button onClick={ this.handleForm }>{ this.props.formType }</button>
         {deleteButton}
       </div>
