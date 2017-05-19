@@ -4,6 +4,7 @@ import SessionFormContainer from './sessions/session_form_container';
 import NavBarContainer from './nav/nav_bar_container';
 import DrinkIndexContainer from './drinks/drink_index_container';
 import DrinkFormContainer from './drinks/drink_form_container';
+import Bottle from './drinks/bottle';
 import { Switch, Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -20,6 +21,7 @@ return (
       <ProtectedRoute path='/home' component={ ()=><h1 style={{margin: '100px'}}>Home page not made yet :(</h1> } />
       <ProtectedRoute path='/bottles/create' component={ DrinkFormContainer } />
       <ProtectedRoute path='/bottles/:id/edit' component={ DrinkFormContainer } />
+      <ProtectedRoute exact path='/bottles/:id' component={ Bottle } />
     </Switch>
   </div>
   );

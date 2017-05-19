@@ -23,7 +23,7 @@ class DrinkIndex extends React.Component {
           return (
             <li className='drink-index-item' key={ key }>
               <img className='drink-icon' src={drinks[key].image_url} />
-              <h1 className='drink-name'>{ drinks[key].name }</h1>
+              <Link className='drink-name' to={`bottles/${key}`}>{ drinks[key].name }</Link>
               <h2 className='brewery'>Brewery: { drinks[key].brewery }</h2>
               <button className='check-in'>Check In</button>
               <Link className='edit-link' to={`/bottles/${key}/edit`}>Edit</Link>
