@@ -16,13 +16,17 @@ class DrinkIndex extends React.Component {
         {Object.keys(drinks).map((key) =>{
           if (key === 'errors') { return }
           return (
-            <li key={ key }>
-              <img src={drinks[key].image_url} height='50' width='50'/>
-              <h1>{ drinks[key].name }</h1>
-              <h2>Brewery: { drinks[key].brewery_id }</h2>
-              <p>{ drinks[key].description }</p>
-              <h2>ABV: { drinks[key].abv }</h2>
-              <h2>Average Rating: { drinks[key].average_rating }</h2>
+            <li className='drink-index-item' key={ key }>
+              <img className='drink-icon' src={drinks[key].image_url} />
+              <h1 className='drink-name'>{ drinks[key].name }</h1>
+              <h2 className='brewery'>Brewery: { drinks[key].brewery_id }</h2>
+              <button className='check-in'>Check In</button>
+              <div className='beer-details'>
+                <h3 className='detail abv'>{ drinks[key].abv } ABV</h3>
+                <h3 className='detail checkins'>'TODO' Checkins </h3>
+                <h3 className='detail rating'>Average Rating: { drinks[key].average_rating }</h3>
+                <h3 className='detail date'>Added "adddate"</h3>
+              </div>
             </li>
           )
         })}

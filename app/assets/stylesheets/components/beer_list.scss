@@ -1,0 +1,79 @@
+@import 'base/colors.scss';
+
+.drink-index {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin: 100px auto;
+}
+.drink-index-item {
+  display: flex;
+  position: relative;
+  border: 1px solid $grey;
+  margin: 10px;
+  padding: 0;
+}
+
+.drink-icon {
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  left: 15px;
+  top: 15px;
+}
+
+.drink-name {
+  font-size: 40px;
+  position: absolute;
+  left: 110px;
+  top: 15px;
+}
+.brewery{
+  position: absolute;
+  left: 110px;
+  top: 70px;
+}
+
+.check-in {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 100px;
+  height: 20px;
+
+}
+
+.beer-details {
+  display: flex;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.detail {
+  display: flex;
+  padding: 3px 0;
+  font-size: 14px;
+  margin: 0;
+  color: $grey;
+  border-top: 1px solid $grey;
+  border-left: 1px solid $grey;
+  align-items: center;
+  justify-content: center;
+}
+.checkins {
+  // width: 20%;
+  flex-grow: 3;
+}
+.abv {
+  // width: 10%;
+  flex-grow: 1;
+  border-left: none;
+}
+.rating {
+  flex-grow: 5;
+  // width: 50%;
+}
+.date {
+  // width: 20%;
+  flex-grow: 1;
+}
