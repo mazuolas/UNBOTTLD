@@ -17,14 +17,17 @@
   background-size: contain;
   left: 0;
   position: relative;
-  min-height: 50px;
-  min-width: 40px;
-}
-
-.nav-icon:hover {
+  height: 45px;
+  width: 24px;
+  padding: 5px;
   -webkit-filter: invert(1);
    filter: invert(1);
 
+}
+
+.nav-icon:hover {
+  -webkit-filter: invert(0);
+   filter: invert(0);
 }
 
 .left-nav {

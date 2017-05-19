@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
   render(){
     return (
       <div className='session-form-page'>
-        <div className='form-background'></div>
+        <img src='http://res.cloudinary.com/dcslgdwha/image/upload/v1495148244/open_bottles_pkmvwr.jpg' className='background-image'/>
         <div className='session-form'>
           <h1 className='form-title'>UNBOTTLD</h1>
           <h2 className='form-subtitle'>Find Bottles</h2>
