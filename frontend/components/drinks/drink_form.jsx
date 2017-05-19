@@ -42,10 +42,8 @@ class DrinkForm extends React.Component {
   render(){
     console.log(this.props.errors);
     return (
-      <div className='drinkForm'>
-        <br/>
-        <br/>
-        <br/>
+      <div className='drink-form'>
+
         <h1 className='drink-form-title'>{this.props.formType} bottle</h1>
         <input
           onChange={ this.update('name') }
