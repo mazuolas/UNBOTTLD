@@ -19,7 +19,7 @@ class DrinkForm extends React.Component {
   componentWillMount(){
     if (this.props.formType === 'edit') {
       this.props.editDrink(this.props.id).then(
-        action => this.setState(action.drink)
+        action => this.setState(action.drink[this.props.id])
       );
     }
   }
@@ -34,13 +34,12 @@ class DrinkForm extends React.Component {
   handleForm(e){
     e.preventDefault();
     this.props.handleForm({ drink: this.state }).then(
-      () => this.props.history.push()
+      () => this.props.history.push('/bottles')
     );
   }
 
 
   render(){
-    console.log(this.props.errors);
     return (
       <div className='drink-form'>
 

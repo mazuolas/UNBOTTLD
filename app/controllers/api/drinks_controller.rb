@@ -10,7 +10,7 @@ class Api::DrinksController < ApplicationController
 
   def update
     find_drink
-    if @drink.update(drink_params)
+    if @drink && @drink.update(drink_params)
       render :show
     else
       render json: @drink.errors.full_messages, status: 422

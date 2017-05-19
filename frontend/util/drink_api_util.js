@@ -20,13 +20,14 @@ export const getAllDrinks = () => (
   })
 );
 
-export const updateDrink = drink => (
+export const updateDrink = drink => {
+  return (
   $.ajax({
     method: 'PATCH',
-    url: `/api/drinks/${drink.id}`,
+    url: `/api/drinks/${drink.drink.id}`,
     data: drink
   })
-);
+);}
 
 export const deleteDrink = id => (
   $.ajax({
