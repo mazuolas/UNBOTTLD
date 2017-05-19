@@ -50,21 +50,26 @@ class DrinkForm extends React.Component {
       <div className='drink-form'>
 
         <h1 className='drink-form-title'>{this.props.formType} bottle</h1>
-        <img className='drink-form-icon' src={this.state.image_url} />
+        <img className='drink-form-img' src={this.state.image_url} />
 
-        <UploadButton handleImage={this.handleImage}/>
+        <UploadButton className='upload' handleImage={this.handleImage}/>
+
+        <h3>Bottle Name</h3>
         <input
           onChange={ this.update('name') }
           value={ this.state.name }
           placeholder='Name'/>
+        <h3>Description</h3>
         <textarea
           onChange={ this.update('description') }
           value={ this.state.description }
           placeholder='Description'/>
+        <h3>Brewery</h3>
         <input
           onChange={ this.update('brewery') }
           value={ this.state.brewery }
           placeholder='Brewery'/>
+        <h3>ABV</h3>
         <input
           onChange={ this.update('abv') }
           value={ this.state.abv }
