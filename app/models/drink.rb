@@ -8,6 +8,7 @@ class Drink < ApplicationRecord
    null: false
 
    belongs_to :brewery
+   has_many :checkins
 
-   
+
 end
