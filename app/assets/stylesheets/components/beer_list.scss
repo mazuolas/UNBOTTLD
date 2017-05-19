@@ -1,10 +1,37 @@
 @import 'base/colors.scss';
 
+.create-text {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.create-link{
+  padding-left: 10px;
+  color: $lightbrown;
+  font-weight: bold;
+}
+.edit-link{
+  display: flex;
+  position: absolute;
+  right: 20px;
+  top: 90px;
+  color: $lightbrown;
+  font-weight: bold;
+}
+
+.create-link:hover{
+  color: $darkgold;
+}
+.edit-link:hover{
+  color: $darkgold;
+}
+
 .drink-index {
   display: flex;
   flex-direction: column;
-  width: 700px;
-  margin: 100px auto;
+  width: 600px;
+  margin: 90px auto;
 }
 .drink-index-item {
   display: flex;
@@ -45,7 +72,7 @@
 
 .beer-details {
   display: flex;
-  margin-top: 100px;
+  margin-top: 130px;
   width: 100%;
 }
 
