@@ -75,7 +75,7 @@ input{
 }
 button {
   display: flex;
-  margin: 5px;
+  margin: 10px 0;
   background: $gold;
   color: white;
   border: none;
@@ -86,6 +86,7 @@ button {
   width: 300px;
   border-radius: 4px;
   justify-content: center;
+
 }
 
 button:hover {
