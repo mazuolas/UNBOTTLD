@@ -1,4 +1,5 @@
 import React from 'react';
+import UploadButton from '../cloudinary/upload_button';
 
 class DrinkForm extends React.Component {
   constructor(props){
@@ -44,6 +45,7 @@ class DrinkForm extends React.Component {
       <div className='drink-form'>
 
         <h1 className='drink-form-title'>{this.props.formType} bottle</h1>
+        <UploadButton />
         <input
           onChange={ this.update('name') }
           value={ this.state.name }
@@ -61,7 +63,6 @@ class DrinkForm extends React.Component {
           value={ this.state.brewery }
           placeholder='Brewery'/>
         <input
-          type='number'
           onChange={ this.update('abv') }
           value={ this.state.abv }
           placeholder='ABV'/>

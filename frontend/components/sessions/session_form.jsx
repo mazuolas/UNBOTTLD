@@ -30,13 +30,20 @@ class SessionForm extends React.Component {
   }
 
   render(){
+    let errors = this.props.errors;
+    if (errors[0]) {
+      errors = errors.map((error, key)=>(
+        <h1 key={key} className='errors'>{error}</h1>
+      ));
+    }
+
     return (
       <div className='session-form-page'>
         <img src='http://res.cloudinary.com/dcslgdwha/image/upload/v1495148244/open_bottles_pkmvwr.jpg' className='background-image'/>
         <div className='session-form'>
           <h1 className='form-title'>UNBOTTLD</h1>
           <h2 className='form-subtitle'>Find Bottles</h2>
-          <h1 className='errors'>{this.props.errors.join(', ')}</h1>
+          {errors}
           <div className='input-box'>
             <i className="material-icons user-icon">account_circle</i>
             <input

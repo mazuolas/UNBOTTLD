@@ -46,7 +46,8 @@
 .errors {
   color: red;
   font-size: 12px;
-  padding: 10px;
+  max-width: 305px;
+  margin-bottom: 10px;
 }
 
 .form-title {
@@ -64,6 +65,7 @@
   color: $gold;
   position: relative;
   bottom: 10px;
+  padding-bottom: 10px;
 }
 
 input{

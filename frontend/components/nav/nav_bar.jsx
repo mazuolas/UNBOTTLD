@@ -5,6 +5,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
+    this.home = this.home.bind(this);
   }
 
   logout(e) {
@@ -12,12 +13,19 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
+  home(e) {
+    e.preventDefault();
+    this.props.history.push('/home');
+  }
+
   render(){
     return(
   <div className='nav-bar'>
 
     <div className='left-nav'>
-      <img className='nav-icon' src='http://res.cloudinary.com/dcslgdwha/image/upload/v1495151026/white_bottle_dglppo.png'/>
+      <img className='nav-icon'
+        onClick={ this.home }
+        src='http://res.cloudinary.com/dcslgdwha/image/upload/v1495151026/white_bottle_dglppo.png'/>
       <NavLink className='index-link nav-link left'
         to='/bottles'>bottles</NavLink>
     </div>
