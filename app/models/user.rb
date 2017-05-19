@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many: checkins
+  has_many :checkins
   attr_reader :password
 
   def password=(password)
