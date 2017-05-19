@@ -15,6 +15,7 @@ class DrinkForm extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleForm = this.handleForm.bind(this);
+    this.handleImage = this.handleImage.bind(this);
   }
 
   componentWillMount(){
@@ -39,13 +40,19 @@ class DrinkForm extends React.Component {
     );
   }
 
+  handleImage(image){
+    this.setState({ image_url: image.url })
+  }
+
 
   render(){
     return (
       <div className='drink-form'>
 
         <h1 className='drink-form-title'>{this.props.formType} bottle</h1>
-        <UploadButton />
+        <img className='drink-form-icon' src={this.state.image_url} />
+
+        <UploadButton handleImage={this.handleImage}/>
         <input
           onChange={ this.update('name') }
           value={ this.state.name }
@@ -54,10 +61,6 @@ class DrinkForm extends React.Component {
           onChange={ this.update('description') }
           value={ this.state.description }
           placeholder='Description'/>
-        <input
-          onChange={ this.update('image_url') }
-          value={ this.state.image_url }
-          placeholder='Image url'/>
         <input
           onChange={ this.update('brewery') }
           value={ this.state.brewery }
