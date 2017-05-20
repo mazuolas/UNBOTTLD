@@ -20,6 +20,17 @@ name: 'Yuengling',
 location: "Pottsville, PA",
 image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495232017/Yuengling_logo_q6ennp.png'
 )
+brewery3 = Brewery.create(
+name: 'Weyerbacher',
+location: "Easton, PA",
+image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495237992/9263734.weyerbacher-db_ih8h9z.jpg'
+)
+
+# brewery = Brewery.create(
+# name: '',
+# location: "",
+# image_url: ''
+# )
 
 drink1 = Drink.create(
   name: "Devil's Due",
@@ -56,3 +67,28 @@ drink4 = Drink.create(
   abv: 3.4,
   average_rating: 2.87
 )
+drink5 = Drink.create(
+  name: "Merry Monks",
+  brewery_id: brewery3.id,
+  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495238215/s_1591_a3dzzk.jpg',
+  description: "Merry Monks, 9.3% ABV, is a Belgian-style Tripel. Pilsner malt combined with an Abbey yeast strain yields a remarkable and complex flavor packed with notes of spice, banana and pear. Nicely balanced, with a moderate to dry finish.",
+  abv: 9.3,
+  average_rating: 3.83
+)
+drink6 = Drink.create(
+  name: "Winter Ale",
+  brewery_id: brewery3.id,
+  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495238517/beer_2327_ewg6wk.jpg',
+  description: "At Weyerbacher we have created a Winter Ale that is a must for any malty beer lover. Winner of a Silver Medal in the 1998 World Beer Championships, Weyerbacher Winter Ale is brewed with deep-roasted chocolate malt. The taste predominates with a warm, roasty flavor, balanced out with a slightly dry finish. It is smooth but not cloying, with a warming belt of alcohol (5.6% ABV). Although winter ales predate history, they are believed to have their origin in the pagan celebrations of winter solstice. Later, when monasteries produced the local brew, winter ales were made each year to commemorate the birth of Christ. Back then, winter ales were brewed full-bodied as a source of nutrition for the upcoming winter months. Today, winter ales are typified by their seasonality, their rich, malty flavors and by their deep, dark coloration. Generally available November-March, Weyerbacher Winter Ale is the perfect libation for a winter meal, with good friends, or beside a warm fire fending off a cold winter night.",
+  abv: 5.6,
+  average_rating: 3.45
+)
+
+# drink = Drink.create(
+#   name: "",
+#   brewery_id: ,
+#   image_url: '',
+#   description: "",
+#   abv: ,
+#   average_rating:
+# )
