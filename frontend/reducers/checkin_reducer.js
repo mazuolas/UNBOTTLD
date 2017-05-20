@@ -9,8 +9,8 @@ const defaultState = {
   errors: []
 };
 
-const checkinReducer = (state, action) => {
-  Objsect.freeze(state);
+const CheckinReducer = (state = defaultState, action) => {
+  Object.freeze(state);
   switch(action.type){
     case(RECEIVE_ALL_CHECKINS):
       return merge({}, defaultState, action.checkins);
@@ -23,4 +23,4 @@ const checkinReducer = (state, action) => {
   }
 }
 
-export default checkinReducer;
+export default CheckinReducer;

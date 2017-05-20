@@ -6,7 +6,7 @@ import {
   REMOVE_DRINK,
 } from '../actions/drink_actions';
 
-const DrinkReducer = (state = {}, action) => {
+const DrinkReducer = (state = {errors: []}, action) => {
   Object.freeze(state)
   switch(action.type){
     case(RECEIVE_ALL_DRINKS):
