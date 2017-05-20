@@ -8,13 +8,13 @@ class Api::CheckinsController < ApplicationController
     drink_id = params[:drink_id]
 
     if user_id
-      user = User.find_by(id: user_id).includes(:checkins)
+      user = User.find_by(id: user_id).includes(:checkins).includes(:drink, :user)
       @checkins = user.checkins
     elsif drink_id
-      drink = Drink.find_by(id: drink_id).includes(:checkins)
+      drink = Drink.find_by(id: drink_id).includes(:checkins).includes(:drink, :user)
       @checkins = drink.checkins
     else
-      @checkins = Checkin.all
+      @checkins = Checkin.all.includes(:user, :drink)
     end
   end
 
