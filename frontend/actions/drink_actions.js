@@ -1,11 +1,11 @@
 import * as DrinkUtil from '../util/drink_api_util';
 export const RECEIVE_DRINK = 'RECEIVE_DRINK';
 export const RECEIVE_ALL_DRINKS = 'RECEIVE_ALL_DRINKS';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_DRINK_ERRORS = 'RECEIVE_DRINK_ERRORS';
 export const REMOVE_DRINK = 'REMOVE_DRINK';
 
 export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
+  type: RECEIVE_DRINK_ERRORS,
   errors: errors.responseJSON
 });
 

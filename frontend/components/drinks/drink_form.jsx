@@ -10,6 +10,7 @@ class DrinkForm extends React.Component {
       description: '',
       image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/e_negate/v1495151026/white_bottle_dglppo.png',
       brewery: '',
+      abv: undefined,
       average_rating: -1,
     };
 
@@ -62,6 +63,12 @@ class DrinkForm extends React.Component {
     if (this.props.formType === 'edit') {
       deleteButton = <button onClick={ this.deleteDrink }>Delete</button>
     }
+    let errors = this.props.errors;
+    if (errors[0]){
+      errors = errors.map((error, key)=>(
+        <h1 key={key} className='errors'>{error}</h1>
+      ))
+    }
 
     return (
       <div className='drink-form'>
@@ -69,7 +76,7 @@ class DrinkForm extends React.Component {
         <img className='drink-form-img' src={this.state.image_url} />
 
         <UploadButton className='upload' handleImage={this.handleImage}/>
-
+        {errors}
         <h3>Bottle Name</h3>
         <input
           onChange={ this.update('name') }

@@ -2,10 +2,10 @@ class Drink < ApplicationRecord
   validates :name,
    :description,
    :image_url,
-   :brewery_id,
+   :brewery,
    :abv,
    :average_rating,
-   null: false
+   presence: true
 
    belongs_to :brewery
    has_many :checkins
