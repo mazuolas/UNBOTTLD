@@ -9,7 +9,7 @@ const defaultState = {
   errors: []
 };
 
-const CheckinReducer = (state = defaultState, action) => {
+const CheckinReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type){

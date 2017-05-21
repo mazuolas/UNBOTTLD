@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CheckinIndexContainer from '../checkins/checkin_index_container';
+
 
 class DrinkPage extends React.Component{
   constructor(props){
     super(props);
     this.checkin = this.checkin.bind(this);
+    this.getDrinkCheckins = this.props.getDrinkCheckins.bind(this)
   }
 
   componentWillMount(){
@@ -40,9 +43,7 @@ class DrinkPage extends React.Component{
         </div>
         <h3 className='drink-description'>{ drink.description }</h3>
         <h1 className='create-text'>Recent Checkins</h1>
-        <div className='checkin-feed'>
-          <h2 className="feed-item">Feed not built yet :(</h2>
-        </div>
+        <CheckinIndexContainer getMethod={this.getDrinkCheckins} />
       </div>
     )
   }

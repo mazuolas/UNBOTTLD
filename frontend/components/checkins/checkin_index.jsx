@@ -15,12 +15,14 @@ class CheckinIndex extends React.Component {
     if(!checkins){
       return null;
     }
-
     return(
-      <ul className='checkin-index'>
+      <ul className='checkin-feed'>
         {Object.keys(checkins).reverse().map((key) =>{
+          if (key === 'errors') {
+            return
+          }
           return(
-            <CheckinItem checkin={checkin} key={key}/>
+            <CheckinItem checkin={checkins[key]} key={key}/>
           )
         })}
       </ul>

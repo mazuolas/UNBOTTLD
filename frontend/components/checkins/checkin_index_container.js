@@ -3,15 +3,14 @@ import CheckinIndex from './checkin_index';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    checkins: state.checkins,
-    id: ownProps.match.params.id
+    checkins: state.checkins
   });
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return({
-    getCheckins: (id) => dispatch(ownProps.getMethod(id))
+    getCheckins: () => dispatch(ownProps.getMethod())
   });
 };
 

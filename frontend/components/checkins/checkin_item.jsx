@@ -8,13 +8,14 @@ class CheckinItem extends React.Component {
   }
 
   render(){
-    console.log(this.props);
     const checkin = this.props.checkin;
     return(
-      <div className='checkin'>
-        <h2>{ checkin.user.username }</h2>
-        <h2>{ checkin.drink.name }</h2>
-        <h2>{ checkin.drink.brewery }</h2>
+      <div className='checkin-index-item'>
+        <h2>{ checkin.user }</h2>
+        <h2>{ checkin.time_ago }</h2>
+        <h2>{ checkin.drink }</h2>
+        <h2>{ checkin.brewery }</h2>
+        <h2>{ checkin.comment }</h2>
           <Rating
             className='stars'
             fractions={2}
