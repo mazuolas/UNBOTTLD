@@ -84,7 +84,6 @@ class CheckinForm extends React.Component {
           <h3>Rating</h3>
           <Rating
             className='stars'
-            placeholderRate={-1}
             onChange={ this.updateRating }
             fractions={2}
             step={1}
