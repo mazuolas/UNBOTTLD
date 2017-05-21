@@ -3,7 +3,8 @@ import CheckinIndex from './checkin_index';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    checkins: state.checkins
+    checkins: state.checkins,
+    id: ownProps.match.params.id
   });
 };
 
