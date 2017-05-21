@@ -1,13 +1,21 @@
 @import 'base/colors.scss';
 
-.rating {
+.checkin-page {
+  margin: 100px auto;
+  width: 600px;
+}
+.stars {
   color: $gold;
 }
 
-.rating:hover {
+.stars:hover {
   color: $darkgold;
 }
 
 .rate-value {
   justify-content: center;
+}
+
+.checkin-page .drink-form {
+  margin: 40px auto;
 }

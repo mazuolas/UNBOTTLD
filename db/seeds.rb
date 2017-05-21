@@ -70,7 +70,7 @@ drink4 = Drink.create(
 drink5 = Drink.create(
   name: "Merry Monks",
   brewery_id: brewery3.id,
-  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495238215/s_1591_a3dzzk.jpg',
+  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495334044/21424_ropyc0.gif',
   description: "Merry Monks, 9.3% ABV, is a Belgian-style Tripel. Pilsner malt combined with an Abbey yeast strain yields a remarkable and complex flavor packed with notes of spice, banana and pear. Nicely balanced, with a moderate to dry finish.",
   abv: 9.3,
   average_rating: 3.83
@@ -78,7 +78,7 @@ drink5 = Drink.create(
 drink6 = Drink.create(
   name: "Winter Ale",
   brewery_id: brewery3.id,
-  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495238517/beer_2327_ewg6wk.jpg',
+  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495333738/2012-12-03-winter-ale-int_vgs3c5.jpg',
   description: "At Weyerbacher we have created a Winter Ale that is a must for any malty beer lover. Winner of a Silver Medal in the 1998 World Beer Championships, Weyerbacher Winter Ale is brewed with deep-roasted chocolate malt. The taste predominates with a warm, roasty flavor, balanced out with a slightly dry finish. It is smooth but not cloying, with a warming belt of alcohol (5.6% ABV). Although winter ales predate history, they are believed to have their origin in the pagan celebrations of winter solstice. Later, when monasteries produced the local brew, winter ales were made each year to commemorate the birth of Christ. Back then, winter ales were brewed full-bodied as a source of nutrition for the upcoming winter months. Today, winter ales are typified by their seasonality, their rich, malty flavors and by their deep, dark coloration. Generally available November-March, Weyerbacher Winter Ale is the perfect libation for a winter meal, with good friends, or beside a warm fire fending off a cold winter night.",
   abv: 5.6,
   average_rating: 3.45
