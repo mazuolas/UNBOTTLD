@@ -1,7 +1,7 @@
 import * as CheckinUtil from '../util/checkin_api_util';
 export const RECEIVE_ALL_CHECKINS = 'RECEIVE_ALL_CHECKINS';
 export const RECEIVE_CHECKIN = 'RECEIVE_CHECKIN';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_CHECKIN_ERRORS = 'RECEIVE_CHECKIN_ERRORS';
 
 export const receiveAllCheckins = (checkins) => ({
   type: RECEIVE_ALL_CHECKINS,
@@ -10,12 +10,13 @@ export const receiveAllCheckins = (checkins) => ({
 
 export const receiveCheckin = checkin => ({
   type: RECEIVE_CHECKIN,
-  checkin
+  checkin: { [checkin.id]: checkin},
+  id: checkin.id
 });
 
 export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
-  errors
+  type: RECEIVE_CHECKIN_ERRORS,
+  errors: errors.responseJSON
 })
 
 export const getDrinkCheckins = id => dispatch => (

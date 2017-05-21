@@ -16,7 +16,8 @@ export const removeDrink = id => ({
 
 export const receiveDrink = drink => ({
   type: RECEIVE_DRINK,
-  drink: {[drink.id]: drink}
+  drink: {[drink.id]: drink},
+  id: drink.id
 });
 
 export const receiveAllDrinks = drinks => ({

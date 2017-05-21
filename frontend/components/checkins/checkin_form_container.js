@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     drink_id: ownProps.match.params.id,
     user_id: state.session.currentUser.id,
-    drink: state.drinks[ownProps.match.params.id]
+    drink: state.drinks[ownProps.match.params.id],
+    errors: state.checkins.errors
   })
 };
 

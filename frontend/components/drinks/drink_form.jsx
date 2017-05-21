@@ -41,7 +41,10 @@ class DrinkForm extends React.Component {
       (response) => (this.setState({brewery_id: response.id}))).then(
         () => (
       this.props.handleForm({ drink: this.state }).then(
-        () => this.props.history.push('/bottles')
+        (response) => {
+          console.log(response);
+          this.props.history.push(`/bottles/${response.id}`);
+        }
         )
       )
     )
@@ -75,7 +78,7 @@ class DrinkForm extends React.Component {
 
         <img className='drink-form-img' src={this.state.image_url} />
         <UploadButton className='upload' handleImage={this.handleImage}/>
-        
+
         {errors}
         <h3>Bottle Name</h3>
         <input
