@@ -1,0 +1,13 @@
+@import 'base/colors.scss';
+
+.rating {
+  color: $gold;
+}
+
+.rating:hover {
+  color: $darkgold;
+}
+
+.rate-value {
+  justify-content: center;
+}

@@ -6,7 +6,8 @@ import { getDrink } from '../../actions/drink_actions';
 const mapStateToProps = (state, ownProps) => {
   return ({
     drink_id: ownProps.match.params.id,
-    user_id: state.session.currentUser.id
+    user_id: state.session.currentUser.id,
+    drink: state.drinks[ownProps.match.params.id]
   })
 };
 

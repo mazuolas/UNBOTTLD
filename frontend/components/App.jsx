@@ -5,6 +5,7 @@ import NavBarContainer from './nav/nav_bar_container';
 import DrinkIndexContainer from './drinks/drink_index_container';
 import DrinkFormContainer from './drinks/drink_form_container';
 import Bottle from './drinks/bottle';
+import CheckinFormContainer from './checkins/checkin_form_container';
 import { Switch, Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -22,6 +23,7 @@ return (
       <ProtectedRoute path='/bottles/create' component={ DrinkFormContainer } />
       <ProtectedRoute path='/bottles/:id/edit' component={ DrinkFormContainer } />
       <ProtectedRoute exact path='/bottles/:id' component={ Bottle } />
+      <ProtectedRoute exact path='/bottles/:id/checkin' component={ CheckinFormContainer } />
     </Switch>
   </div>
   );
