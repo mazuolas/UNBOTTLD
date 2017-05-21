@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CheckinIndexContainer from '../checkins/checkin_index_container';
-
+import DrinkItem from './drink_item';
 
 class DrinkPage extends React.Component{
   constructor(props){
     super(props);
-    this.checkin = this.checkin.bind(this);
     this.getDrinkCheckins = this.props.getDrinkCheckins.bind(this)
   }
 
   componentWillMount(){
-    this.props.getDrink();
+    if(!this.props.drink){
+      this.props.getDrink();
+    }
     this.getDrinkCheckins();
   }
 
@@ -29,19 +30,7 @@ class DrinkPage extends React.Component{
     }
     return (
       <div className='drink-page'>
-        <div className='drink-index-item '>
-          <img className='drink-icon' src={drink.image_url} />
-          <h1 className='drink-name'>{ drink.name }</h1>
-          <h2 className='brewery'>Brewery: { drink.brewery }</h2>
-          <button className='check-in' onClick={this.checkin(drink.id)}>Check In</button>
-          <Link className='edit-link' to={`/bottles/${drink.id}/edit`}>Edit</Link>
-          <div className='beer-details'>
-            <h3 className='detail abv'>{ drink.abv } ABV</h3>
-            <h3 className='detail checkins'>{ drink.checkin_count } Checkins </h3>
-            <h3 className='detail rating'>Average Rating: { drink.average_rating }</h3>
-            <h3 className='detail date'>Added {drink.created_at}</h3>
-          </div>
-        </div>
+        <DrinkItem drink={drink} history={this.props.history}/>
         <h3 className='drink-description'>{ drink.description }</h3>
         <CheckinIndexContainer />
       </div>

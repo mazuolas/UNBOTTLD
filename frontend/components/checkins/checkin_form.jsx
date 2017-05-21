@@ -63,6 +63,13 @@ class CheckinForm extends React.Component {
     if (this.state.rating > 0) {
       rateValue = <h3 className='rate-value'>({this.state.rating})</h3>
     }
+
+    let rating;
+    if (drink.checkin_count === 0){
+      rating = <h3 className='detail rating'>Average Rating: none</h3>
+    } else{
+      rating = <h3 className='detail rating'>Average Rating: { drink.average_rating }</h3>
+    }
     return (
       <div className='checkin-page'>
         <div className='drink-index-item '>
@@ -71,8 +78,8 @@ class CheckinForm extends React.Component {
           <h2 className='brewery'>Brewery: { drink.brewery }</h2>
           <div className='beer-details'>
             <h3 className='detail abv'>{ drink.abv } ABV</h3>
-            <h3 className='detail checkins'>'TODO' Checkins </h3>
-            <h3 className='detail rating'>Average Rating: { drink.average_rating }</h3>
+            <h3 className='detail checkins'>{ drink.checkin_count } Checkins </h3>
+            {rating}
             <h3 className='detail date'>Added {drink.created_at}</h3>
           </div>
         </div>

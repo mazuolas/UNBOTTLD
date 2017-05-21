@@ -1,17 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DrinkItem from './drink_item';
 
 class DrinkIndex extends React.Component {
   constructor(props){
     super(props);
-    this.checkin = this.checkin.bind(this);
-  }
-
-  checkin(key) {
-    return (e) =>{
-      e.preventDefault();
-      this.props.history.push(`/bottles/${key}/checkin`)
-    }
   }
 
   componentWillMount(){
@@ -29,19 +22,7 @@ class DrinkIndex extends React.Component {
         {Object.keys(drinks).map((key) =>{
           if (key === 'errors') { return }
           return (
-            <li className='drink-index-item' key={ key }>
-              <img className='drink-icon' src={drinks[key].image_url} />
-              <Link className='drink-name' to={`bottles/${key}`}>{ drinks[key].name }</Link>
-              <h2 className='brewery'>Brewery: { drinks[key].brewery }</h2>
-              <button className='check-in' onClick={this.checkin(key)}>Check In</button>
-              <Link className='edit-link' to={`/bottles/${key}/edit`}>Edit</Link>
-              <div className='beer-details'>
-                <h3 className='detail abv'>{ drinks[key].abv } ABV</h3>
-                <h3 className='detail checkins'>{ drinks[key].checkin_count } Checkins </h3>
-                <h3 className='detail rating'>Average Rating: { drinks[key].average_rating }</h3>
-                <h3 className='detail date'>Added {drinks[key].created_at}</h3>
-              </div>
-            </li>
+            <DrinkItem key={key} drink={drinks[key]} history={this.props.history}/>
           )
         })}
       </ul>
