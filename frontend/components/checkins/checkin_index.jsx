@@ -6,12 +6,10 @@ class CheckinIndex extends React.Component {
     super(props);
 
   }
-  componentWillMount(){
-    if (Object.keys(this.props.checkins).length === 1 ) {
-      this.props.getCheckins();
-    }
-  }
 
+  componentWillUnmount(){
+    this.props.clearCheckins();
+  }
 
   render(){
     const checkins = this.props.checkins;

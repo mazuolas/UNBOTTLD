@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CheckinIndex from './checkin_index';
-import { getAllCheckins, clearCheckins } from '../../actions/checkin_actions';
+import { clearCheckins } from '../../actions/checkin_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return({
-    getCheckins: () => dispatch(getAllCheckins()),
     clearCheckins: () => dispatch(clearCheckins())
   });
 };
