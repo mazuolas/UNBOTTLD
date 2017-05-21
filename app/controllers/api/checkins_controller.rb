@@ -19,7 +19,7 @@ class Api::CheckinsController < ApplicationController
   end
 
   def create
-    @Checkin.new(checkin_params)
+    @checkin = Checkin.new(checkin_params)
     if @checkin.save
       render :show
     else
