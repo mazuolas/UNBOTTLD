@@ -12,6 +12,7 @@ class DrinkPage extends React.Component{
 
   componentWillMount(){
     this.props.getDrink();
+    this.getDrinkCheckins();
   }
 
   checkin(key) {
@@ -43,7 +44,7 @@ class DrinkPage extends React.Component{
         </div>
         <h3 className='drink-description'>{ drink.description }</h3>
         <h1 className='create-text'>Recent Checkins</h1>
-        <CheckinIndexContainer getCheckins={this.getDrinkCheckins} />
+        <CheckinIndexContainer />
       </div>
     )
   }

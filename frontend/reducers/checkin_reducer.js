@@ -1,7 +1,8 @@
 import {
   RECEIVE_ALL_CHECKINS,
   RECEIVE_CHECKIN,
-  RECEIVE_CHECKIN_ERRORS
+  RECEIVE_CHECKIN_ERRORS,
+  CLEAR_CHECKINS
 } from '../actions/checkin_actions';
 import merge from 'lodash/merge';
 
@@ -9,7 +10,7 @@ const defaultState = {
   errors: []
 };
 
-const CheckinReducer = (state = {}, action) => {
+const CheckinReducer = (state = defaultState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   switch(action.type){
@@ -21,6 +22,8 @@ const CheckinReducer = (state = {}, action) => {
     case(RECEIVE_CHECKIN_ERRORS):
       delete newState['errors'];
       return merge({}, newState, {errors: action.errors});
+    case(CLEAR_CHECKINS):
+      return merge({}, defaultState);
     default:
       return state;
   }
