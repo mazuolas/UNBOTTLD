@@ -1,0 +1,23 @@
+@import 'base/colors.scss';
+
+.checkin-index-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid $grey;
+  margin: 10px;
+  padding: 0;
+  background-color: white;
+  box-shadow: 5px 5px 15px #888888;
+}
+
+.checkin-feed {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 30px auto;
+}
+
+.checkin-index-item h2 {
+  font-size: 15px;
+}

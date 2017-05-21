@@ -12,7 +12,7 @@ class CheckinItem extends React.Component {
     return(
       <div className='checkin-index-item'>
         <h2>{ checkin.user }</h2>
-        <h2>{ checkin.time_ago }</h2>
+        <h2>{ checkin.time_ago } ago</h2>
         <h2>{ checkin.drink }</h2>
         <h2>{ checkin.brewery }</h2>
         <h2>{ checkin.comment }</h2>
