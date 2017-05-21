@@ -8,12 +8,10 @@ class CheckinIndex extends React.Component {
   }
   componentWillMount(){
     if (Object.keys(this.props.checkins).length === 1 ) {
-      this.props.getCheckins(this.props.id);
+      this.props.getCheckins();
     }
   }
-  componentWillDismount(){
-    this.props.clearCheckins();
-  }
+
 
   render(){
     const checkins = this.props.checkins;
@@ -22,6 +20,7 @@ class CheckinIndex extends React.Component {
     }
     return(
       <ul className='checkin-feed'>
+        <h1 className='checkin-text'>Recent Checkins</h1>
         {Object.keys(checkins).reverse().map((key) =>{
           if (key === 'errors') {
             return

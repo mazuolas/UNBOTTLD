@@ -30,8 +30,12 @@
   display: flex;
   flex-direction: column;
   width: 600px;
-  margin: 0 auto;
+  margin: 100px auto;
   border: 1px solid $grey;
+}
+
+.drink-page .checkin-feed {
+  margin-top: 50px;
 }
 
 .checkin-index-item h2 {
@@ -52,4 +56,13 @@
   padding: 20px;
   margin: 0;
   border-bottom: 1px solid $grey;
+}
+
+.checkin-text {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding-top: 20px;
+  font-size: 30px;
+  color: $darkgold;
 }
