@@ -92,3 +92,11 @@ drink6 = Drink.create(
 #   abv: ,
 #   average_rating:
 # )
+
+checkin = Checkin.create(
+  user_id: user1.id,
+  drink_id: drink1.id,
+  rating: 5,
+  comment: 'Its my favorite beer ever!!!',
+  image_url: drink1.image_url
+)

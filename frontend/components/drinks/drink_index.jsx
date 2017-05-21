@@ -37,7 +37,7 @@ class DrinkIndex extends React.Component {
               <Link className='edit-link' to={`/bottles/${key}/edit`}>Edit</Link>
               <div className='beer-details'>
                 <h3 className='detail abv'>{ drinks[key].abv } ABV</h3>
-                <h3 className='detail checkins'>'TODO' Checkins </h3>
+                <h3 className='detail checkins'>{ drinks[key].checkin_count } Checkins </h3>
                 <h3 className='detail rating'>Average Rating: { drinks[key].average_rating }</h3>
                 <h3 className='detail date'>Added {drinks[key].created_at}</h3>
               </div>

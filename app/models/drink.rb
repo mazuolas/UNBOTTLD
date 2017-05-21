@@ -8,7 +8,9 @@ class Drink < ApplicationRecord
    presence: true
 
    belongs_to :brewery
-   has_many :checkins
+   has_many :checkins, dependent: :destroy
 
-
+   def checkin_count
+     self.checkins.count
+   end
 end
