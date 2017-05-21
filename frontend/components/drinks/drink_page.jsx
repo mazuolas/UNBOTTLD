@@ -30,7 +30,7 @@ class DrinkPage extends React.Component{
     }
     return (
       <div className='drink-page'>
-        <DrinkItem drink={drink} history={this.props.history}/>
+        <DrinkItem drink={drink} />
         <h3 className='drink-description'>{ drink.description }</h3>
         <CheckinIndexContainer />
       </div>

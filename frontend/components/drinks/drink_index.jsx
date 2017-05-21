@@ -22,7 +22,7 @@ class DrinkIndex extends React.Component {
         {Object.keys(drinks).map((key) =>{
           if (key === 'errors') { return }
           return (
-            <DrinkItem key={key} drink={drinks[key]} history={this.props.history}/>
+            <DrinkItem key={key} drink={drinks[key]} />
           )
         })}
       </ul>

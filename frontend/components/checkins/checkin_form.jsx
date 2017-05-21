@@ -1,6 +1,7 @@
 import React from 'react';
 import Rating from 'react-rating';
 import UploadButton from '../cloudinary/upload_button';
+import DrinkItem from '../drinks/drink_item';
 
 class CheckinForm extends React.Component {
   constructor(props){
@@ -72,17 +73,7 @@ class CheckinForm extends React.Component {
     }
     return (
       <div className='checkin-page'>
-        <div className='drink-index-item '>
-          <img className='drink-icon' src={drink.image_url} />
-          <h1 className='drink-name'>{ drink.name }</h1>
-          <h2 className='brewery'>Brewery: { drink.brewery }</h2>
-          <div className='beer-details'>
-            <h3 className='detail abv'>{ drink.abv } ABV</h3>
-            <h3 className='detail checkins'>{ drink.checkin_count } Checkins </h3>
-            {rating}
-            <h3 className='detail date'>Added {drink.created_at}</h3>
-          </div>
-        </div>
+        <DrinkItem drink={drink} />
 
         <div className='drink-form'>
           {errors}
