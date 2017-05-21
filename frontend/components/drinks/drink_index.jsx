@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom';
 class DrinkIndex extends React.Component {
   constructor(props){
     super(props);
+    this.checkin = this.checkin.bind(this);
+  }
+
+  checkin(key) {
+    return (e) =>{
+      e.preventDefault();
+      this.props.history.push(`/bottles/${key}/checkin`)
+    }
   }
 
   componentWillMount(){
@@ -25,7 +33,7 @@ class DrinkIndex extends React.Component {
               <img className='drink-icon' src={drinks[key].image_url} />
               <Link className='drink-name' to={`bottles/${key}`}>{ drinks[key].name }</Link>
               <h2 className='brewery'>Brewery: { drinks[key].brewery }</h2>
-              <button className='check-in'>Check In</button>
+              <button className='check-in' onClick={this.checkin(key)}>Check In</button>
               <Link className='edit-link' to={`/bottles/${key}/edit`}>Edit</Link>
               <div className='beer-details'>
                 <h3 className='detail abv'>{ drinks[key].abv } ABV</h3>

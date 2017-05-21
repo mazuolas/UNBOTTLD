@@ -11,13 +11,13 @@ const defaultState = {
 
 const CheckinReducer = (state = defaultState, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
   switch(action.type){
     case(RECEIVE_ALL_CHECKINS):
       return merge({}, defaultState, action.checkins);
     case(RECEIVE_CHECKIN):
       return merge({}, state, action.checkin, defaultState);
     case(RECEIVE_ERRORS):
-      let newState = merge({}, state);
       delete newState['errors'];
       return merge({}, newState, action.errors);
     default:
