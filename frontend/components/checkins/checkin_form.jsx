@@ -75,7 +75,7 @@ class CheckinForm extends React.Component {
       <div className='checkin-page'>
         <DrinkItem drink={drink} />
 
-        <div className='drink-form'>
+        <form className='drink-form'>
           {errors}
           <img className='drink-form-img' src={this.state.image_url} />
           <UploadButton className='upload' handleImage={this.handleImage}/>
@@ -95,7 +95,7 @@ class CheckinForm extends React.Component {
             value={ this.state.comment }
             placeholder='Comment'/>
           <button onClick={ this.checkin }>Checkin!</button>
-        </div>
+        </form>
       </div>
     )
   }

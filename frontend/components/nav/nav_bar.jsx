@@ -20,7 +20,7 @@ class NavBar extends React.Component {
 
   render(){
     return(
-  <div className='nav-bar'>
+  <nav className='nav-bar'>
 
     <div className='left-nav'>
       <img className='nav-icon'
@@ -38,7 +38,7 @@ class NavBar extends React.Component {
         to={'/'}>logout</NavLink>
     </div>
 
-  </div>
+  </nav>
   )
   }
 }

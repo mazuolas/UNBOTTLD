@@ -98,7 +98,7 @@ checkin1 = Checkin.create(
   drink_id: drink1.id,
   rating: 5,
   comment: 'Its my favorite beer ever!!!',
-  image_url: drink1.image_url
+  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495411642/duclaw-devils-due-2_lssy38.jpg'
 )
 
 # checkin = Checkin.create(

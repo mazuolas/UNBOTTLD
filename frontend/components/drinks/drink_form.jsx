@@ -74,7 +74,7 @@ class DrinkForm extends React.Component {
     }
 
     return (
-      <div className='drink-form'>
+      <form className='drink-form'>
 
         <img className='drink-form-img' src={this.state.image_url} />
         <UploadButton className='upload' handleImage={this.handleImage}/>
@@ -102,7 +102,7 @@ class DrinkForm extends React.Component {
           placeholder='Description'/>
         <button onClick={ this.handleForm }>{ this.props.formType }</button>
         {deleteButton}
-      </div>
+      </form>
     )
   }
 }
