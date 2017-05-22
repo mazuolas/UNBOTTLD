@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CheckinIndexContainer from '../checkins/checkin_index_container';
-
+import UploadButton from '../cloudinary/upload_button';
 class Profile extends React.Component {
   constructor(props){
     super(props);
-    this.state ={firstRender: true}
+    this.handleImage = this.handleImage.bind(this);
   }
 
   componentWillMount(){
@@ -18,6 +18,13 @@ class Profile extends React.Component {
     this.props.clearCheckins();
   }
 
+  handleImage(image){
+    this.props.updateUser({
+      id: this.props.id,
+      image_url: image.url
+    });
+  }
+
   render(){
     const user = this.props.user;
     if (!user) {
@@ -27,10 +34,17 @@ class Profile extends React.Component {
       this.props.getUser();
       this.props.getUserCheckins();
     }
+    let editButton = '';
+    if (user.id == this.props.currentUserId) {
+      editButton = <UploadButton className='profile-button' handleImage={ this.handleImage }/>
+    }
     return (
       <div className='user-profile'>
         <div className='profile-top'>
-          <img className='profile-picture' src={user.image_url} />
+          <div>
+            <img className='profile-picture' src={user.image_url} />
+            {editButton}
+          </div>
           <h1 className='user-name'>{user.username}</h1>
           <div className='profile-stats'>
             <div className='user-stats'>

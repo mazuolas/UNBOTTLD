@@ -3,6 +3,7 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const CLEAR_USER = 'CLEAR_USER';
+export const RECEIVE_USER_IMAGE = 'RECEIVE_USER_IMAGE';
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -21,6 +22,11 @@ export const receiveUser = user => ({
 
 export const clearUser = () => ({
   type: CLEAR_USER
+});
+
+export const receiveUserImage = (user) => ({
+  type: RECEIVE_USER_IMAGE,
+  user
 });
 
 export const login = user => dispatch => (
@@ -53,5 +59,11 @@ export const getCurrentUser = (id) => dispatch => (
 export const getUser = (id) => dispatch => (
   APIUtils.getUser(id).then(
     user => dispatch(receiveUser(user))
+  )
+);
+
+export const updateUser = (user) => dispatch => (
+  APIUtils.updateUser(user).then(
+    user => dispatch(receiveUserImage(user))
   )
 );

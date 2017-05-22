@@ -3,7 +3,8 @@ import {
   RECEIVE_ERRORS,
   RECEIVE_CURRENT_USER,
   RECEIVE_USER,
-  CLEAR_USER
+  CLEAR_USER,
+  RECEIVE_USER_IMAGE
 } from '../actions/session_actions';
 
 const nullUser = Object.freeze({
@@ -24,6 +25,8 @@ const SessionReducer = (state = nullUser, action) => {
     case(CLEAR_USER):
       delete newState.user;
       return merge({}, newState);
+    case(RECEIVE_USER_IMAGE):
+      return merge({}, {currentUser: action.user, user: action.user, errors: []});
     case(RECEIVE_ERRORS):
       delete newState['errors'];
       return merge({}, newState, {errors: action.errors})
