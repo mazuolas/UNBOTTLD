@@ -47,9 +47,7 @@ class Profile extends React.Component {
           </div>
           <h1 className='user-name'>{user.username}</h1>
           <div className='profile-stats'>
-            <div className='user-stats'>
-              <h3>Checkins: </h3>
-            </div>
+            
             <div className='user-stats'>
               <h3>{user.total_checkins}</h3>
               <h3>Total</h3>
