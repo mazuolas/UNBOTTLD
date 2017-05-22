@@ -8,10 +8,10 @@ class Api::CheckinsController < ApplicationController
     drink_id = params[:drink_id]
     if user_id
       user = User.includes(:checkins).find_by(id: user_id)
-      @checkins = user.checkins.limit(20).order('id DESC')
+      @checkins = user.checkins.includes(:brewery, :drink).limit(20).order('id DESC')
     elsif drink_id
       drink = Drink.includes(:checkins).find_by(id: drink_id)
-      @checkins = drink.checkins.limit(20).order('id DESC')
+      @checkins = drink.checkins.includes(:brewery, :drink, :user).limit(20).order('id DESC')
     else
       @checkins = Checkin.includes(:user, :drink).all.limit(20).order('id DESC')
     end

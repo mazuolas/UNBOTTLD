@@ -3,6 +3,7 @@ class Checkin < ApplicationRecord
   validates_inclusion_of :rating, in: 0..5, message: 'is required'
   belongs_to :user
   belongs_to :drink
+  has_one :brewery, through: :drink
 
   after_save :set_new_average
 

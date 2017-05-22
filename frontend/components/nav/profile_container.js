@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { getUser, clearUser } from '../../actions/session_actions';
-import { getUserCheckins } from '../../actions/checkin_actions';
+import { getUserCheckins, clearCheckins } from '../../actions/checkin_actions';
 
 const mapStateToProps = ( state, ownProps ) => ({
   user: state.session.user,
@@ -11,7 +11,8 @@ const mapStateToProps = ( state, ownProps ) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getUser: () => dispatch(getUser(ownProps.match.params.id)),
   getUserCheckins: () => dispatch(getUserCheckins(ownProps.match.params.id)),
-  clearUser: () => dispatch(clearUser())
+  clearUser: () => dispatch(clearUser()),
+  clearCheckins: () => dispatch(clearCheckins())
 });
 
 export default connect(
