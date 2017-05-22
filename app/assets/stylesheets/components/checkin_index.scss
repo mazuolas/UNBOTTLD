@@ -37,6 +37,7 @@
 
 .checkin-feed {
   display: flex;
+  background-color: white;
   flex-direction: column;
   width: 600px;
   margin: 100px auto;
@@ -48,14 +49,15 @@
 }
 
 .checkin-index-item h2 {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: normal;
   max-width: 450px;
-
+  margin-bottom: 10px;
 }
 .checkin-index-item h3 {
   font-size: 15px;
   font-weight: lighter;
+  margin: 0 0 10px 0;
 }
 
 .checkin-index-item h4{
@@ -69,9 +71,17 @@
 
 .checkin-text {
   display: flex;
-  justify-content: center;
-  background-color: white;
   padding-top: 20px;
   font-size: 30px;
+  color: black;
+  border-bottom: 1px solid $grey;
+  margin: 0 20px;
+}
+
+.checkin-link {
+  color: $lightbrown;
+  text-transform: capitalize;
+}
+.checkin-link:hover {
   color: $darkgold;
 }

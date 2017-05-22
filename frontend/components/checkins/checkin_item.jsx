@@ -1,5 +1,6 @@
 import React from 'react';
 import Rating from 'react-rating';
+import { Link } from 'react-router-dom';
 
 class CheckinItem extends React.Component {
   constructor(props){
@@ -16,7 +17,10 @@ class CheckinItem extends React.Component {
 
     return(
       <div className='checkin-index-item'>
-        <h2>{ checkin.user } uncapped a { checkin.drink } by { checkin.brewery }.</h2>
+        <h2><Link className='checkin-link' to={`/users/${checkin.user_id}`}>{ checkin.user }</Link>
+           {' uncapped a '}
+           <Link className='checkin-link' to={`/bottles/${checkin.drink_id}`}>{ checkin.drink }</Link>
+             {' by'} { checkin.brewery }.</h2>
         <div className='checkin-comment'>
           <h3>{ checkin.comment }</h3>
           <Rating

@@ -40,11 +40,11 @@ class DrinkItem extends React.Component {
     let buttons = null;
     if (pathname !== `/bottles/${drink.id}/checkin`){
       buttons = [
-        <button className='check-in' onClick={this.checkin(drink.id)}>Check In</button>,
-        <Link className='edit-link' to={`/bottles/${drink.id}/edit`}>Edit</Link>
+        <button className='check-in' key={1} onClick={this.checkin(drink.id)}>Check In</button>,
+        <Link className='edit-link' key={2} to={`/bottles/${drink.id}/edit`}>Edit</Link>
       ]
     }
-    
+
     return (
       <div className='drink-index-item '>
         <img className='drink-icon' src={drink.image_url} />
