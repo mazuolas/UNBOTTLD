@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -30,13 +30,13 @@ class NavBar extends React.Component {
       <img className='nav-icon'
         onClick={ this.home }
         src='http://res.cloudinary.com/dcslgdwha/image/upload/v1495151026/white_bottle_dglppo.png'/>
-      <Link className='index-link nav-link left'
-        to='/bottles'>bottles</Link>
+      <NavLink className='index-link nav-link left'
+        to='/bottles'>bottles</NavLink>
     </div>
 
     <div className='right-nav'>
-      <Link className='index-link nav-link'
-        to={`/users/${this.props.user.id}`}>{this.props.user.username}</Link>
+      <NavLink className='index-link nav-link'
+        to={`/users/${this.props.user.id}`}>{this.props.user.username}</NavLink>
       <Link className='index-link nav-link'
         onClick={ this.logout }
         to={'/'}>logout</Link>

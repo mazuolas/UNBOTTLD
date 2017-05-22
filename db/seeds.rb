@@ -13,6 +13,36 @@ user1 = User.create(
 )
 user2 = User.create(username: 'guest', password: 'supersecretguestpassword')
 
+user3 = User.create(
+  username: 'Landfill',
+  password: 'password',
+  image_url: "http://res.cloudinary.com/dcslgdwha/image/upload/v1495428451/How_i_picture_quot_lot_of_energy_quot_drunks_get_depressed__75c0c631c92233070c0d714893160d49_sdaxea.jpg"
+)
+
+
+user4 = User.create(
+  username: 'Fink',
+  password: 'password',
+  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495429017/970032_060_xp2jdd.jpg'
+)
+
+user5 = User.create(
+  username: 'Jan',
+  password: 'password',
+  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495429094/slideshow-02.12.14-beerfest-paul-soter_p6whrq.jpg'
+)
+
+user6 = User.create(
+  username: 'Todd',
+  password: 'password',
+  image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/v1495429398/slideshow-02.12.14-beerfest-Erik-Stolhanske_jdwsq1.jpg'
+)
+user7 = User.create(
+  username: 'Barry',
+  password: 'password',
+  image_url: "http://res.cloudinary.com/dcslgdwha/image/upload/v1495428707/hqdefault_yxwkpk.jpg"
+)
+
 brewery1 = Brewery.create(
 name: 'DuClaw',
 location: "Baltimore, MD",
@@ -112,3 +142,27 @@ checkin1 = Checkin.create(
 #   comment: ,
 #   image_url:
 # )
+USERS = [user3, user4, user5, user6, user7]
+DRINKS = [drink1, drink2, drink3, drink4, drink5, drink6]
+r = Random.new
+IMAGE = [
+  "",
+  "",
+  "",
+  "http://res.cloudinary.com/dcslgdwha/image/upload/v1495430741/judges-most-important-craft-beers-ft-ss0117_nfdfwz.jpg",
+  "http://res.cloudinary.com/dcslgdwha/image/upload/v1495430007/beer-1290633_960_720_qe9yl5.jpg",
+  "http://res.cloudinary.com/dcslgdwha/image/upload/v1495430081/beer-422138_960_720_omo69y.jpg",
+  "http://res.cloudinary.com/dcslgdwha/image/upload/v1495430153/8282413073_a72d998d47_b_hpv7ob.jpg",
+  "http://res.cloudinary.com/dcslgdwha/image/upload/v1495430361/Why-Beer-Is-Good-For-You_mbk2qk.jpg"
+]
+50.times do
+  drink = DRINKS.sample
+  image = IMAGE.sample
+  Checkin.create(
+    user_id: USERS.sample.id,
+    drink_id: drink.id,
+    rating: r.rand(5)+1,
+    comment: '',
+    image_url: (image == "") ? drink.image_url : image
+  )
+end
