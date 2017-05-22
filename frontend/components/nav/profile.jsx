@@ -30,10 +30,21 @@ class Profile extends React.Component {
     return (
       <div className='user-profile'>
         <div className='profile-top'>
-          <img className='profile-icon' src={user.image_url} />
-          <h1>{user.username}</h1>
-          <h3 className='user-stats'>Total {user.total_checkins}</h3>
-          <h3 className='user-stats'>unique {user.unique_checkins}</h3>
+          <img className='profile-picture' src={user.image_url} />
+          <h1 className='user-name'>{user.username}</h1>
+          <div className='profile-stats'>
+            <div className='user-stats'>
+              <h3>Checkins: </h3>
+            </div>
+            <div className='user-stats'>
+              <h3>{user.total_checkins}</h3>
+              <h3>Total</h3>
+            </div>
+            <div className='user-stats'>
+              <h3>{user.unique_checkins}</h3>
+              <h3>Unique</h3>
+            </div>
+          </div>
         </div>
         <CheckinIndexContainer />
       </div>

@@ -5,18 +5,61 @@
 }
 
 .profile-top {
-  background-color: white;
-  width: 600px;
+  background-image: url('http://res.cloudinary.com/dcslgdwha/image/upload/v1495430277/craft-beer_fvbbv1.jpg');
+  background-size: cover;
+  position: relative;
+  width: 700px;
+  height: 300px;
   margin: 0 auto;
   padding: 20px;
+  box-shadow: 5px 5px 15px #888888;
+  justify-content: flex-start;
+  align-items: flex-end;
+  display: flex;
+}
+.profile-picture {
+  max-width: 150px;
+  max-height: 150px;
+  margin: 0 20px 50px 0;
 }
 
 .user-stats {
-  display: inline-flex;
-  font-weight: normal;
-  font-size: 20px;
-  background-color: $gold;
-  width: 100px;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items:  flex-start;
+  justify-content: center;
+  margin: 10px;
+  padding-left: 10px;
+  padding-right: 15px;
 
+  border-left: 1px solid $gold;
+}
+
+.profile-stats h3{
+  font-weight: normal;
+  font-size: 15px;
+  margin: 0;
+}
+.profile-stats {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  background-color: black;
+  justify-content: flex-start;
+  width: calc(100% - 50px);
+  padding-left: 50px;
+}
+
+.user-name {
+  display: inline-flex;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  margin: 0 20px 50px 0;
+  background-color: black;
+  border-radius: 10px;
+  font-size: 30px;
+  text-transform: capitalize;
 }
