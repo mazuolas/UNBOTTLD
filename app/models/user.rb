@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :username, :password_digest, :session_token, presence: true
+  validates :username, :password_digest, :session_token, :image_url, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
@@ -27,6 +27,14 @@ class User < ApplicationRecord
     user = User.find_by(username: username)
     return user if user && user.is_password?(password)
     nil
+  end
+
+  def total_checkins
+    self.checkins.count
+  end
+
+  def unique_checkins
+    self.checkins.select('DISTINCT drink_id').count
   end
 
   private

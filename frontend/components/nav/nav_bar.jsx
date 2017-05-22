@@ -8,6 +8,7 @@ class NavBar extends React.Component {
     this.home = this.home.bind(this);
   }
 
+
   logout(e) {
     e.preventDefault();
     this.props.logout();
@@ -19,6 +20,8 @@ class NavBar extends React.Component {
   }
 
   render(){
+    this.props.getCurrentUser(this.props.user.id);
+
     return(
   <nav className='nav-bar'>
 
@@ -36,6 +39,7 @@ class NavBar extends React.Component {
       <NavLink className='index-link nav-link'
         onClick={ this.logout }
         to={'/'}>logout</NavLink>
+      <img className='profile-icon' src={this.props.user.image_url} />
     </div>
 
   </nav>
