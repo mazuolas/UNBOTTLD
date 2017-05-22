@@ -9,6 +9,11 @@ class CheckinItem extends React.Component {
 
   render(){
     const checkin = this.props.checkin;
+    let checkinImage = null;
+    if (checkin.drink_image !== checkin.image_url) {
+      checkinImage = <img className='checkin-image' src={checkin.image_url} />
+    }
+
     return(
       <div className='checkin-index-item'>
         <h2>{ checkin.user } uncapped a { checkin.drink } by { checkin.brewery }.</h2>
@@ -23,7 +28,8 @@ class CheckinItem extends React.Component {
             empty="fa fa-star-o fa-2x"
             full="fa fa-star fa-2x"/>
         </div>
-        <img className='checkin-icon' src={checkin.image_url} />
+        {checkinImage}
+        <img className='checkin-icon' src={checkin.drink_image} />
         <h4>{ checkin.time_ago } ago</h4>
       </div>
     )
