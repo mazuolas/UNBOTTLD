@@ -3,13 +3,13 @@ import CheckinIndex from './checkin_index';
 import { clearCheckins } from '../../actions/checkin_actions';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return ({
     checkins: state.checkins
   });
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return({
     clearCheckins: () => dispatch(clearCheckins())
   });
