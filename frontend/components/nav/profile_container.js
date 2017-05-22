@@ -7,7 +7,7 @@ const mapStateToProps = ( state ) => ({
   user: state.session.user
 });
 
-const mapDispatchToProps = (dispatch, ownProps) = => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   getUser: () => dispatch(getUser(ownProps.match.params.id)),
   getUserCheckins: () => dispatch(getUserCheckins(ownProps.match.params.id)),
   clearUser: () => dispatch(clearUser())

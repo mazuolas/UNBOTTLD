@@ -52,6 +52,6 @@ export const getCurrentUser = (id) => dispatch => (
 
 export const getUser = (id) => dispatch => (
   APIUtils.getUser(id).then(
-    user => dispatch(receiveUser())
+    user => dispatch(receiveUser(user))
   )
 );
