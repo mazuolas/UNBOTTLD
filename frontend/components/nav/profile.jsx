@@ -12,7 +12,7 @@ class Profile extends React.Component {
     this.props.getUser();
     this.props.getUserCheckins();
   }
-
+  
   componentWillUnmount(){
     this.props.clearUser();
   }
@@ -24,6 +24,12 @@ class Profile extends React.Component {
     }
     return (
       <div className='user-profile'>
+        <div className='profile-top'>
+          <img className='profile-icon' src={user.image_url} />
+          <h1>{user.username}</h1>
+          <h1>total {user.total_checkins}</h1>
+          <h1>unique {user.unique_checkins}</h1>
+        </div>
         <CheckinIndexContainer />
       </div>
     )

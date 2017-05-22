@@ -6,14 +6,13 @@ import DrinkItem from './drink_item';
 class DrinkPage extends React.Component{
   constructor(props){
     super(props);
-    this.getDrinkCheckins = this.props.getDrinkCheckins.bind(this)
   }
 
   componentWillMount(){
     if(!this.props.drink){
       this.props.getDrink();
     }
-    this.getDrinkCheckins();
+    this.props.getDrinkCheckins();
   }
 
   checkin(key) {

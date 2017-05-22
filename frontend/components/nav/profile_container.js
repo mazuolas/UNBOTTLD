@@ -3,8 +3,9 @@ import Profile from './profile';
 import { getUser, clearUser } from '../../actions/session_actions';
 import { getUserCheckins } from '../../actions/checkin_actions';
 
-const mapStateToProps = ( state ) => ({
-  user: state.session.user
+const mapStateToProps = ( state, ownProps ) => ({
+  user: state.session.user,
+  id: ownProps.match.params.id
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
