@@ -32,8 +32,8 @@ class Profile extends React.Component {
         <div className='profile-top'>
           <img className='profile-icon' src={user.image_url} />
           <h1>{user.username}</h1>
-          <h1>total {user.total_checkins}</h1>
-          <h1>unique {user.unique_checkins}</h1>
+          <h3 className='user-stats'>Total {user.total_checkins}</h3>
+          <h3 className='user-stats'>unique {user.unique_checkins}</h3>
         </div>
         <CheckinIndexContainer />
       </div>

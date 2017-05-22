@@ -17,7 +17,8 @@ const SessionReducer = (state = nullUser, action) => {
   let newState = merge({}, state);
   switch(action.type){
     case(RECEIVE_CURRENT_USER):
-      return merge({}, state, {currentUser: action.currentUser});
+      delete newState.errors
+      return merge({}, newState, {errors: []}, {currentUser: action.currentUser});
     case(RECEIVE_USER):
       return merge({}, state, {user: action.user});
     case(CLEAR_USER):
