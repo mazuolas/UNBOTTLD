@@ -63,8 +63,10 @@ class DrinkForm extends React.Component {
 
   render(){
     let deleteButton = "";
-    if (this.props.formType === 'edit') {
+    let formType = this.props.formType;
+    if (formType === 'edit') {
       deleteButton = <button onClick={ this.deleteDrink }>Delete</button>
+      formType = 'Save'
     }
     let errors = this.props.errors;
     if (errors[0]){
@@ -100,7 +102,7 @@ class DrinkForm extends React.Component {
           onChange={ this.update('description') }
           value={ this.state.description }
           placeholder='Description'/>
-        <button onClick={ this.handleForm }>{ this.props.formType }</button>
+        <button onClick={ this.handleForm }>{ formType }</button>
         {deleteButton}
       </form>
     )
