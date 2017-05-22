@@ -155,7 +155,7 @@ IMAGE = [
   "http://res.cloudinary.com/dcslgdwha/image/upload/v1495430153/8282413073_a72d998d47_b_hpv7ob.jpg",
   "http://res.cloudinary.com/dcslgdwha/image/upload/v1495430361/Why-Beer-Is-Good-For-You_mbk2qk.jpg"
 ]
-50.times do
+300.times do
   drink = DRINKS.sample
   image = IMAGE.sample
   Checkin.create(

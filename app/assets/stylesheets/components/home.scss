@@ -1,0 +1,81 @@
+@import 'base/colors.scss';
+.home-page {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+}
+
+.home-page .checkin-feed {
+  margin-right: 40px;
+
+}
+
+.side-bar {
+  display: flex;
+  margin: 100px auto;
+  margin-left: 0;
+}
+
+.stat-box {
+  display: flex;
+  background-color: white;
+  min-width: 250px;
+  height: 150px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 5px 5px 15px #888888;
+  padding: 20px;
+
+}
+
+.home-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+ .home-stat {
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+ }
+
+ .first {
+   border-right: 1px solid $grey;
+
+ }
+.home-stat h3 {
+  margin: 0;
+  padding: 0px 10px;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+}
+.home-stat h4 {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 12px;
+  padding: 0px 10px;
+  font-weight: lighter;
+}
+
+.home-name {
+  font-size: 30px;
+  padding: 20px;
+  max-width: 250px;
+  overflow:  hidden;
+}
+
+.home-icon {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.top-stat-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%
+}
