@@ -45,7 +45,10 @@ class CheckinForm extends React.Component {
 
   checkin(e) {
     this.props.createCheckin({checkin: this.state}).then(
-      () => this.props.getCurrentUser(this.props.user_id)
+      () => {
+        this.props.getCurrentUser(this.props.user_id);
+        this.props.getDrink(this.props.drink_id);
+      }
     ).then(
       () => this.props.history.push(`/home`)
     )
