@@ -60,3 +60,23 @@
 .active {
   text-decoration: underline;
 }
+
+.search {
+  background-color: $gold;
+  width: 200px;
+  height: 20px;
+  margin: auto;
+  border-color: black;
+}
+
+.search::placeholder {
+  color: black;
+}
+.search-box {
+  margin-left: 20px;
+}
+.search-box i {
+  color: black;
+  left: 5px;
+  border-color: black;
+}

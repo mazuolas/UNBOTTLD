@@ -42,9 +42,13 @@ class NavBar extends React.Component {
         src='http://res.cloudinary.com/dcslgdwha/image/upload/v1495151026/white_bottle_dglppo.png'/>
       <NavLink className='index-link nav-link left'
         to='/bottles'>bottles</NavLink>
-      <input className='search'
-        onChange={ this.searchDrinks }
-        value={ this.state.search }/>
+      <div className='input-box search-box'>
+          <i className="material-icons user-icon">search</i>
+        <input className='search'
+          onChange={ this.searchDrinks }
+          value={ this.state.search }
+          placeholder='Search for a bottle'/>
+      </div>
     </div>
 
     <div className='right-nav'>
