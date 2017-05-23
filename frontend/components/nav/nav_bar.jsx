@@ -47,7 +47,7 @@ class NavBar extends React.Component {
         <input className='search'
           onChange={ this.searchDrinks }
           value={ this.state.search }
-          placeholder='Search for a bottle'/>
+          placeholder='Search by name or brewery'/>
       </div>
     </div>
 

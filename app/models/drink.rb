@@ -11,7 +11,10 @@ class Drink < ApplicationRecord
    belongs_to :brewery
    has_many :checkins, dependent: :destroy
 
-   pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true } }
+   pg_search_scope :search_by_name,
+    against: :name,
+    associated_against: {brewery: :name }, 
+    using: { tsearch: {prefix: true } }
 
    def checkin_count
      self.checkins.count

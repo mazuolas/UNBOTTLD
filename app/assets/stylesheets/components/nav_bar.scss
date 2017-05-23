@@ -62,7 +62,7 @@
 }
 
 .search {
-  background-color: $gold;
+  background-color: $darkgold;
   width: 200px;
   height: 20px;
   margin: auto;
@@ -79,4 +79,24 @@
   color: black;
   left: 5px;
   border-color: black;
+}
+
+.search::-webkit-input-placeholder {
+font-size: 14px;
+color: black;
+}
+
+.search:-moz-placeholder { /* Firefox 18- */
+font-size: 14px;
+color: black;
+}
+
+.search::-moz-placeholder {  /* Firefox 19+ */
+font-size: 14px;
+color: black;
+}
+
+.search:-ms-input-placeholder {
+font-size: 14px;
+color: black;
 }
