@@ -66,3 +66,9 @@ export const editDrink = id => dispatch => (
     errors => dispatch(receiveErrors(errors))
   )
 );
+
+export const getDrinkSearch = search => dispatch => (
+  DrinkUtil.getDrinkSearch(search).then(
+    drinks => dispatch(receiveAllDrinks(drinks))
+  )
+);
