@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import CheckinForm from './checkin_form';
 import { createCheckin } from '../../actions/checkin_actions';
 import { getDrink } from '../../actions/drink_actions';
+import { getCurrentUser } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -15,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     createCheckin: checkin => dispatch(createCheckin(checkin)),
-    getDrink: id => dispatch(getDrink(id))
+    getDrink: id => dispatch(getDrink(id)),
+    getCurrentUser: (id) => dispatch(getCurrentUser(id))
   })
 };
 
