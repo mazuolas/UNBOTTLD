@@ -1,4 +1,5 @@
 class Drink < ApplicationRecord
+  include PgSearch
   validates :name,
    :description,
    :image_url,
@@ -9,6 +10,8 @@ class Drink < ApplicationRecord
 
    belongs_to :brewery
    has_many :checkins, dependent: :destroy
+
+   pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true } }
 
    def checkin_count
      self.checkins.count

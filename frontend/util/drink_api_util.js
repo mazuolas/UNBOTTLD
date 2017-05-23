@@ -42,3 +42,10 @@ export const editDrink = id => (
     url: `/api/drinks/${id}/edit`
   })
 );
+
+export const getDrinkSearch = search => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/drinks?search=${search}`
+  })
+);
