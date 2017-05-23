@@ -27,7 +27,7 @@ class Api::DrinksController < ApplicationController
   end
 
   def index
-    if params[:search]
+    if params[:search] && params[:search] != ""
       @drinks = Drink.search_by_name(params[:search])
     else
       @drinks = Drink.all.includes(:brewery).limit(20).order('id DESC')

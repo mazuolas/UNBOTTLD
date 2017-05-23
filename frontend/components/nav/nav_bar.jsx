@@ -7,7 +7,8 @@ class NavBar extends React.Component {
     this.logout = this.logout.bind(this);
     this.home = this.home.bind(this);
     this.props.getCurrentUser(this.props.user.id);
-
+    this.searchDrinks = this.searchDrinks.bind(this);
+    this.state = { search: '' }
   }
 
 
@@ -21,6 +22,15 @@ class NavBar extends React.Component {
     this.props.history.push('/home');
   }
 
+  searchDrinks(e) {
+    e.preventDefault();
+    this.setState({search: e.target.value});
+    if (this.props.location != '/bottles') {
+      this.props.history.push(`/bottles`);
+    }
+    this.props.getDrinkSearch(e.target.value)
+  }
+
   render(){
 
     return(
@@ -32,6 +42,9 @@ class NavBar extends React.Component {
         src='http://res.cloudinary.com/dcslgdwha/image/upload/v1495151026/white_bottle_dglppo.png'/>
       <NavLink className='index-link nav-link left'
         to='/bottles'>bottles</NavLink>
+      <input className='search'
+        onChange={ this.searchDrinks }
+        value={ this.state.search }/>
     </div>
 
     <div className='right-nav'>
