@@ -49,3 +49,10 @@ export const getDrinkSearch = search => (
     url: `/api/drinks?search=${search}`
   })
 );
+
+export const getTopDrinks = () => {
+  $.ajax({
+    method: 'GET',
+    url: '/api/drinks?top=true'
+  })
+};

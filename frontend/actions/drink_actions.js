@@ -3,6 +3,7 @@ export const RECEIVE_DRINK = 'RECEIVE_DRINK';
 export const RECEIVE_ALL_DRINKS = 'RECEIVE_ALL_DRINKS';
 export const RECEIVE_DRINK_ERRORS = 'RECEIVE_DRINK_ERRORS';
 export const REMOVE_DRINK = 'REMOVE_DRINK';
+export const RECEIVE_TOP_DRINKS = 'RECEIVE_TOP_DRINKS';
 
 export const receiveErrors = errors => ({
   type: RECEIVE_DRINK_ERRORS,
@@ -22,6 +23,11 @@ export const receiveDrink = drink => ({
 
 export const receiveAllDrinks = drinks => ({
   type: RECEIVE_ALL_DRINKS,
+  drinks
+});
+
+export const receiveTopDrinks = drinks => ({
+  type: RECEIVE_TOP_DRINKS,
   drinks
 });
 
@@ -70,5 +76,11 @@ export const editDrink = id => dispatch => (
 export const getDrinkSearch = search => dispatch => (
   DrinkUtil.getDrinkSearch(search).then(
     drinks => dispatch(receiveAllDrinks(drinks))
+  )
+);
+
+export const getTopDrinks = () => (
+  DrinkUtil.getTopDrinks().then(
+    drinks => dispatch(receiveTopDrinks(drinks))
   )
 );
