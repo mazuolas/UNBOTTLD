@@ -12,7 +12,7 @@ const DrinkReducer = (state = {errors: []}, action) => {
   let newState = merge({}, state);
   switch(action.type){
     case(RECEIVE_ALL_DRINKS):
-      return merge({}, action.drinks, {errors: []});
+      return merge({}, action.drinks, {errors: []}, {top: newState.top});
     case(RECEIVE_DRINK):
       return merge({}, state, action.drink, {errors: []});
     case(RECEIVE_DRINK_ERRORS):
