@@ -79,7 +79,7 @@ export const getDrinkSearch = search => dispatch => (
   )
 );
 
-export const getTopDrinks = () => (
+export const getTopDrinks = () => dispatch => (
   DrinkUtil.getTopDrinks().then(
     drinks => dispatch(receiveTopDrinks(drinks))
   )

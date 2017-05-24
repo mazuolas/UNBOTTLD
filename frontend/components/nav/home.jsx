@@ -1,5 +1,6 @@
 import React from 'react';
 import CheckinIndexContainer from '../checkins/checkin_index_container';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   constructor(props){
@@ -8,10 +9,27 @@ class Home extends React.Component {
 
   componentWillMount(){
     this.props.getAllCheckins();
+    this.props.getTopDrinks();
   }
 
   render(){
-    const user = this.props.user
+    const topDrinks = this.props.topDrinks;
+    const user = this.props.user;
+    let topDisplay = null;
+    if (topDrinks){
+      topDisplay= Object.keys(topDrinks).map((key)=> {
+        const drink = topDrinks[key];
+        return(
+          <div key= {key} className='top-drink'>
+            <img className='top-drink-icon' src={drink.image_url} />
+            <Link className='top-drink-name'
+              to={`/bottles/${drink.id}`}>{ drink.name }</Link>
+            <h1 className='top-drink-rating'>{drink.average_rating}</h1>
+          </div>
+        )
+      }
+      );
+    }
     return(
       <div className='home-page'>
         <CheckinIndexContainer />
@@ -33,6 +51,10 @@ class Home extends React.Component {
                 <h4>Unique</h4>
               </div>
             </div>
+          </div>
+          <div className='stat-box two'>
+            <h1 className='title'>top average rating</h1>
+            {topDisplay}
           </div>
         </div>
       </div>

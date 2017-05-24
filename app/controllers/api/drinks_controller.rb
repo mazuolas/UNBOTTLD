@@ -30,7 +30,8 @@ class Api::DrinksController < ApplicationController
     if params[:search] && params[:search] != ""
       @drinks = Drink.search_by_name(params[:search])
     elsif params[:top]
-      @drinks = Drink.all.includes(:brewery).limit(5).order('rating DESC')
+      @drinks = Drink.all.includes(:brewery).limit(5).order('average_rating DESC')
+      render :top
     else
       @drinks = Drink.all.includes(:brewery).limit(20).order('id DESC')
     end

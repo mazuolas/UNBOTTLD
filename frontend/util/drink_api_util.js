@@ -50,9 +50,9 @@ export const getDrinkSearch = search => (
   })
 );
 
-export const getTopDrinks = () => {
+export const getTopDrinks = () => (
   $.ajax({
     method: 'GET',
     url: '/api/drinks?top=true'
   })
-};
+);

@@ -4,6 +4,7 @@ import {
   RECEIVE_DRINK_ERRORS,
   RECEIVE_ALL_DRINKS,
   REMOVE_DRINK,
+  RECEIVE_TOP_DRINKS
 } from '../actions/drink_actions';
 
 const DrinkReducer = (state = {errors: []}, action) => {
@@ -20,6 +21,8 @@ const DrinkReducer = (state = {errors: []}, action) => {
     case(REMOVE_DRINK):
       delete newState[action.id];
       return newState;
+    case(RECEIVE_TOP_DRINKS):
+      return merge({}, newState, { top: action.drinks })
     default:
       return state;
   }
