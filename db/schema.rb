@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170522012628) do
     t.string   "session_token",                                                                                                        null: false
     t.datetime "created_at",                                                                                                           null: false
     t.datetime "updated_at",                                                                                                           null: false
-    t.string   "image_url",       default: "http://res.cloudinary.com/dcslgdwha/image/upload/v1495416657/Elliot_Grieveson_kqkf2w.png", null: false
+    t.string   "image_url",       default: "https://res.cloudinary.com/dcslgdwha/image/upload/v1495416657/Elliot_Grieveson_kqkf2w.png", null: false
     t.index ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end

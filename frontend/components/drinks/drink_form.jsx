@@ -8,7 +8,7 @@ class DrinkForm extends React.Component {
     this.state = {
       name: '',
       description: '',
-      image_url: 'http://res.cloudinary.com/dcslgdwha/image/upload/e_negate/v1495151026/white_bottle_dglppo.png',
+      image_url: 'https://res.cloudinary.com/dcslgdwha/image/upload/e_negate/v1495151026/white_bottle_dglppo.png',
       brewery: '',
       abv: undefined,
       average_rating: -1,

@@ -39,7 +39,7 @@ class NavBar extends React.Component {
     <div className='left-nav'>
       <img className='nav-icon'
         onClick={ this.home }
-        src='http://res.cloudinary.com/dcslgdwha/image/upload/v1495151026/white_bottle_dglppo.png'/>
+        src='https://res.cloudinary.com/dcslgdwha/image/upload/v1495151026/white_bottle_dglppo.png'/>
       <NavLink className='index-link nav-link left'
         to='/bottles'>bottles</NavLink>
       <div className='input-box search-box'>
