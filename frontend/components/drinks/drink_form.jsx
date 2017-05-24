@@ -51,7 +51,7 @@ class DrinkForm extends React.Component {
   }
 
   handleImage(image){
-    this.setState({ image_url: image.url });
+    this.setState({ image_url: image.secure_url });
   }
 
   deleteDrink(e){
