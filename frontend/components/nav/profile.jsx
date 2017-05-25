@@ -10,7 +10,7 @@ class Profile extends React.Component {
 
   componentWillMount(){
     this.props.getUser();
-    this.props.getUserCheckins();
+    this.props.getUserCheckins(0);
   }
 
   componentWillUnmount(){
@@ -36,7 +36,7 @@ class Profile extends React.Component {
     }
     let editButton = '';
     if (user.id == this.props.currentUserId) {
-      editButton = <UploadButton className='profile-button' handleImage={ this.handleImage }/>
+      editButton = <UploadButton id='profile-button' handleImage={ this.handleImage }/>
     }
     return (
       <div className='user-profile'>
@@ -58,7 +58,7 @@ class Profile extends React.Component {
             </div>
           </div>
         </div>
-        <CheckinIndexContainer />
+        <CheckinIndexContainer getCheckins={ this.props.getUserCheckins }/>
       </div>
     )
   }

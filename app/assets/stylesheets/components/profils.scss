@@ -63,7 +63,7 @@
   font-size: 30px;
   text-transform: capitalize;
 }
-.user-profile button {
+.profile-button {
   width: 100px;
   margin: 0;
   position: absolute;
@@ -75,7 +75,7 @@
   left: 40px
 }
 
-.user-profile button:hover {
+.profile-button:hover {
   background-color: $gold;
   color: black;
 }

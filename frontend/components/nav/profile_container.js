@@ -11,7 +11,7 @@ const mapStateToProps = ( state, ownProps ) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getUser: () => dispatch(getUser(ownProps.match.params.id)),
-  getUserCheckins: () => dispatch(getUserCheckins(ownProps.match.params.id)),
+  getUserCheckins: (pos) => dispatch(getUserCheckins(ownProps.match.params.id, pos)),
   clearUser: () => dispatch(clearUser()),
   clearCheckins: () => dispatch(clearCheckins()),
   updateUser: (user) => dispatch(updateUser(user))
