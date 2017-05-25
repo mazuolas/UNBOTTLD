@@ -16,10 +16,11 @@ class Home extends React.Component {
   render(){
     const topDrinks = this.props.topDrinks;
     const user = this.props.user;
-
     return(
       <div className='home-page'>
-        <CheckinIndexContainer getCheckins={ this.props.getAllCheckins }/>
+        <CheckinIndexContainer
+          total={ this.props.totalCheckins }
+          getCheckins={ this.props.getAllCheckins }/>
         <SideBar user={ user } topDrinks={ topDrinks }/>
       </div>
     );

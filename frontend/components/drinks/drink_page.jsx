@@ -31,7 +31,9 @@ class DrinkPage extends React.Component{
       <div className='drink-page'>
         <DrinkItem drink={drink} />
         <h3 className='drink-description'>{ drink.description }</h3>
-        <CheckinIndexContainer getCheckins={ this.props.getDrinkCheckins }/>
+        <CheckinIndexContainer
+          total={ drink.checkin_count }
+          getCheckins={ this.props.getDrinkCheckins }/>
       </div>
     )
   }

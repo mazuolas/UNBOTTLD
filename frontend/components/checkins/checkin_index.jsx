@@ -4,7 +4,7 @@ import CheckinItem from './checkin_item';
 class CheckinIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = { pos: 0 }
+    this.state = { pos: 10 }
     this.getMoreCheckins = this.getMoreCheckins.bind(this);
   }
 
@@ -15,7 +15,7 @@ class CheckinIndex extends React.Component {
   getMoreCheckins(e){
     e.preventDefault();
     this.setState( { pos: (this.state.pos + 10) } );
-    this.props.getCheckins(this.state.pos+10);
+    this.props.getCheckins(this.state.pos);
   }
 
   render(){
@@ -23,21 +23,26 @@ class CheckinIndex extends React.Component {
     if(!checkins){
       return null;
     }
+    let showMore = null;
+    if (this.props.total > this.state.pos) {
+      showMore = (<button className='show-more'
+        onClick={ this.getMoreCheckins }
+        >Show More</button>
+      )
+    }
 
     return(
       <ul className='checkin-feed'>
         <h1 className='checkin-text'>Recent Checkins</h1>
         {Object.keys(checkins).reverse().map((key) =>{
-          if (key === 'errors') {
+          if (key === 'all_checkins' || key === 'errors') {
             return
           }
           return(
             <CheckinItem checkin={checkins[key]} key={key}/>
           )
         })}
-        <button className='show-more'
-          onClick={ this.getMoreCheckins }
-          >Show More</button>
+        {showMore}
       </ul>
     )
   }

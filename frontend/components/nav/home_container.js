@@ -6,7 +6,8 @@ import { getTopDrinks } from '../../actions/drink_actions';
 const mapStateToProps = (state) => {
   return({
     user: state.session.currentUser,
-    topDrinks: state.drinks.top
+    topDrinks: state.drinks.top,
+    totalCheckins: state.checkins.all_checkins 
   });
 };
 

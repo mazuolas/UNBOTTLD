@@ -42,7 +42,6 @@ class DrinkForm extends React.Component {
         () => (
       this.props.handleForm({ drink: this.state }).then(
         (response) => {
-          console.log(response);
           this.props.history.push(`/bottles/${response.id}`);
         }
         )

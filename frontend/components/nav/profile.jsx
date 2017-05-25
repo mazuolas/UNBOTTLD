@@ -58,7 +58,9 @@ class Profile extends React.Component {
             </div>
           </div>
         </div>
-        <CheckinIndexContainer getCheckins={ this.props.getUserCheckins }/>
+        <CheckinIndexContainer
+          total={ user.total_checkins }
+          getCheckins={ this.props.getUserCheckins }/>
       </div>
     )
   }

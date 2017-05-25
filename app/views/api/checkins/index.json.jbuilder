@@ -3,3 +3,5 @@
     json.partial! 'api/checkins/checkin', checkin: checkin
   end
 end
+
+json.all_checkins Checkin.all.count
