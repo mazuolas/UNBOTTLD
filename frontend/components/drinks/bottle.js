@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getDrink: () => dispatch(getDrink(ownProps.match.params.id)),
-  getDrinkCheckins: () => dispatch(getDrinkCheckins(ownProps.match.params.id)),
+  getDrinkCheckins: (pos) => dispatch(getDrinkCheckins(ownProps.match.params.id, pos)),
 });
 
 export default connect(

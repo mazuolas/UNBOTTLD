@@ -12,7 +12,7 @@ class DrinkPage extends React.Component{
     if(!this.props.drink){
       this.props.getDrink();
     }
-    this.props.getDrinkCheckins();
+    this.props.getDrinkCheckins(0);
   }
 
   checkin(key) {
@@ -31,7 +31,7 @@ class DrinkPage extends React.Component{
       <div className='drink-page'>
         <DrinkItem drink={drink} />
         <h3 className='drink-description'>{ drink.description }</h3>
-        <CheckinIndexContainer />
+        <CheckinIndexContainer getCheckins={ this.props.getDrinkCheckins }/>
       </div>
     )
   }
