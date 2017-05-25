@@ -36,7 +36,7 @@ class Profile extends React.Component {
     }
     let editButton = '';
     if (user.id == this.props.currentUserId) {
-      editButton = <UploadButton id='profile-button' handleImage={ this.handleImage }/>
+      editButton = <UploadButton className='profile-button' handleImage={ this.handleImage }/>
     }
     return (
       <div className='user-profile'>
