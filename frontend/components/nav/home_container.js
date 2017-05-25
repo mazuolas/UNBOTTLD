@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return({
   getTopDrinks: () => dispatch(getTopDrinks()),
-  getAllCheckins: () => dispatch(getAllCheckins())
+  getAllCheckins: (pos) => dispatch(getAllCheckins(pos))
   });
 };
 

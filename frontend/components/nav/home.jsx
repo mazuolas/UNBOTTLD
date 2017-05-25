@@ -9,7 +9,7 @@ class Home extends React.Component {
   }
 
   componentWillMount(){
-    this.props.getAllCheckins();
+    this.props.getAllCheckins(0);
     this.props.getTopDrinks();
   }
 
@@ -19,7 +19,7 @@ class Home extends React.Component {
 
     return(
       <div className='home-page'>
-        <CheckinIndexContainer />
+        <CheckinIndexContainer getCheckins={ this.props.getAllCheckins }/>
         <SideBar user={ user } topDrinks={ topDrinks }/>
       </div>
     );
