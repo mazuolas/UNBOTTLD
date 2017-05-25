@@ -4,7 +4,6 @@ class UploadButton extends React.Component {
   constructor(props){
     super(props);
     this.upload = this.upload.bind(this);
-    console.log(props);
   }
 
   upload(e){
