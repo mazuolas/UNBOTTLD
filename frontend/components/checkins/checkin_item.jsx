@@ -18,7 +18,7 @@ class CheckinItem extends React.Component {
     return(
       <div className='checkin-index-item'>
         <h2><Link className='checkin-link' to={`/users/${checkin.user_id}`}>{ checkin.user }</Link>
-           {' uncapped a '}
+           {' unbottled a '}
            <Link className='checkin-link' to={`/bottles/${checkin.drink_id}`}>{ checkin.drink }</Link>
              {' by'} { checkin.brewery }.</h2>
         <div className='checkin-comment'>
