@@ -1,64 +1,61 @@
 # UNBOTTLD
 
-[Heroku link][heroku]
+UNBOTTLD is a single page web app that was inspired by UNTAPPD, where users can keep track of what beers they've tried by rating it and also see what other people are drinking.  
 
-[Trello link][trello]
+[UNBOTTLD live](https://unbottld.herokuapp.com)
 
-[heroku]: https://unbottld.herokuapp.com/
-[trello]: https://trello.com/b/A7XVjaRF/unbottld
+## Technologies used
 
-## MVP
+* Ruby
+* Rails
+* JavaScript
+* React.js
+* Redux
+* PostgreSQL
+* Cloudinary
+* webpack
 
-UNBOTTLD is a single page web application inspired by UNTAPPD built using Ruby on Rails and React/Redux. At the end of W9D5 it will, at minimum, satisify the following criteria with bug-free navigation, adequate seed data to demonstrate the features, and sufficient CSS styling.
+## Features and Implementation
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Drinks CRUD
-- [ ] Checkins / reviews
-- [ ] Review feed
-- [ ] Profile
-- [ ] Production README
+### Side Bar
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+![side bar]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+#### Current User's stats
 
-##Implementation Time Line
+The first box in the side bar holds the current user's profile picture, username, total checkins and unique checkins.  The user's picture is stored on cloudinary and a link to the image is stored in a users table.  The checkin stats are calculated on the back end by using active record to count the number of checkins and unique checkins the belong to the current user.
 
-### Phase 1: Back end setup and front end user authentication (2 days)
+#### Top Rated Bottles
 
-**Objective:** Functioning rails project with front end authentication
-
-### Phase 2: Drinks CRUD (2 days)
-
-**Objective:** Drinks can be created, read, edited and destroyed through the API.
-
-### Phase 3: Checkins / reviews (2 days)
-
-**Objective:** Drinks can be added to a user's drink list with reviews.
-
-### Phase 4: Checkin feed
-
-**Objective** Checkins appear on the review feed
-
-### Phase 5: Profile (2 days)
-
-**Objective:** User profile that includes their drink list, a profile picture and stats about their drinks.
+The drinks table stores the average rating for each beer, and currently that average is updated on every checkin.  Currently this method is fine for calculating averages but would not scale well when many users are creating many checkins.  If the site gets large enough the averages will be changed to only update once a day instead of on every checkin.
 
 
+### Search
 
-### Bonus Features(TBD)
-- [ ] Breweries
-- [ ] Friendships
-- [ ] Search
-- [ ] Venues
-- [ ] Badges
+Updating the beer list in real time as the user types was implemented by sending an ajax request with the value of the search sent as a query parameter every time the search input field changes.  The filtering is handled on the back end by the `pg_search` gem.
+``` Ruby
+pg_search_scope :search_by_name,
+ against: :name,
+ associated_against: {brewery: :name },
+ using: { tsearch: {prefix: true } }
+```
+
+This allows the search to check both the name of drinks and the name of the associated brewery.
+
+## Future of the project
+
+I plan on adding more features in the future, the next additions will be below.
+
+### Brewery Page
+
+A page simmilar to a user's profile that will display information about the brewery and show a list of their beers.
+
+### Commenting on checkins
+
+Allow users to comment on other people's checkins.
+
+### webpack code splitting
+
+Improve the initial load time by only sending the code needed for the current page being viewed.
+
+[side bar]: ./docs/screens/side_bar.png
