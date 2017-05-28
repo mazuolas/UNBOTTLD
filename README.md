@@ -2,7 +2,7 @@
 
 UNBOTTLD is a single page web app that was inspired by UNTAPPD, where users can keep track of what beers they've tried by rating it and also see what other people are drinking.  
 
-[UNBOTTLD live](https://unbottld.herokuapp.com)
+[UNBOTTLD live](https://www.unbottld.beer)
 
 ## Technologies used
 
