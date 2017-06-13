@@ -33,3 +33,10 @@ export const createCheckin = checkin => (
     data: checkin
   })
 );
+
+export const deleteCheckin = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/checkins/${id}`
+  })
+);
