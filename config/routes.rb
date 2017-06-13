@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :drinks, only: [:create, :show, :update, :edit, :destroy, :index] do
       resources :checkins, only: [:index ]
     end
-    resources :checkins, only: [:show, :index, :create]
+    resources :checkins, only: [:show, :index, :create, :destroy]
     resources :breweries, only: [:create]
   end
 end
