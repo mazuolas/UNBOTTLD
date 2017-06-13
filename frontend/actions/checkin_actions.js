@@ -4,6 +4,7 @@ export const RECEIVE_CHECKIN = 'RECEIVE_CHECKIN';
 export const RECEIVE_CHECKIN_ERRORS = 'RECEIVE_CHECKIN_ERRORS';
 export const CLEAR_CHECKINS = 'CLEAR_CHECKINS';
 export const RECEIVE_MORE_CHECKINS = 'RECEIVE_MORE_CHECKINS';
+export const REMOVE_CHECKIN = 'REMOVE_CHECKIN';
 
 export const receiveAllCheckins = (checkins) => ({
   type: RECEIVE_ALL_CHECKINS,
@@ -28,6 +29,11 @@ export const receiveErrors = errors => ({
 export const receiveMoreCheckins = checkins => ({
   type: RECEIVE_MORE_CHECKINS,
   checkins
+});
+
+export const removeCheckin = checkin => ({
+  type: REMOVE_CHECKIN,
+  checkin
 });
 
 export const getDrinkCheckins = (id, pos) => dispatch => {
@@ -81,6 +87,12 @@ export const getAllCheckins = (id, pos) => dispatch => {
 export const getCheckin = id => dispatch => (
   CheckinUtil.getCheckin(id).then(
     checkin => dispatch(receiveAllCheckins(checkin))
+  )
+);
+
+export const deleteCheckin = id => dispatch => (
+  CheckinUtil.deleteCheckin(id).then(
+    checkin => dispatch(removeCheckin(checkin))
   )
 );
 
