@@ -31,6 +31,11 @@ export const receiveMoreCheckins = checkins => ({
   checkins
 });
 
+export const removeCheckin = id => ({
+  type: REMOVE_CHECKIN,
+  id
+})
+
 export const getDrinkCheckins = (id, pos) => dispatch => {
   if (pos == 0) {
     return(

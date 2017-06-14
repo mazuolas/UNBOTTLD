@@ -5,14 +5,22 @@ import { Link } from 'react-router-dom';
 class CheckinItem extends React.Component {
   constructor(props){
     super(props);
-
   }
 
+  deleteCheckin(){
+    this.props.deleteCheckin(this.props.key)
+  }
   render(){
     const checkin = this.props.checkin;
     let checkinImage = null;
     if (checkin.drink_image !== checkin.image_url) {
       checkinImage = <img className='checkin-image' src={checkin.image_url} />
+    }
+    let deleteButton = null
+    if (this.props.deletable) {
+      deleteButton = (
+        <button onClick={this.deleteCheckin.bind(this)}>Delete</button>
+      )
     }
 
     return(
@@ -31,6 +39,7 @@ class CheckinItem extends React.Component {
             initialRate={checkin.rating}
             empty="fa fa-star-o fa-2x"
             full="fa fa-star fa-2x"/>
+          {deleteButton}
         </div>
         {checkinImage}
         <img className='checkin-icon' src={checkin.drink_image} />

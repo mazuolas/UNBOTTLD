@@ -38,8 +38,14 @@ class CheckinIndex extends React.Component {
           if (key === 'all_checkins' || key === 'errors') {
             return
           }
+          let checkin = checkins[key]
+          console.log(checkin.user_id);
           return(
-            <CheckinItem checkin={checkins[key]} key={key}/>
+            <CheckinItem
+              checkin={checkin}
+              deleteCheckin={this.props.deleteCheckin}
+              deletable={ checkin.user_id == this.props.userId}
+              key={key}/>
           )
         })}
         {showMore}
