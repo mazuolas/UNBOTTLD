@@ -8,7 +8,7 @@ class CheckinItem extends React.Component {
   }
 
   deleteCheckin(){
-    this.props.deleteCheckin(this.props.key)
+    this.props.deleteCheckin(this.props.checkin.id)
   }
   render(){
     const checkin = this.props.checkin;

@@ -92,7 +92,7 @@ export const getCheckin = id => dispatch => (
 
 export const deleteCheckin = id => dispatch => (
   CheckinUtil.deleteCheckin(id).then(
-    checkin => dispatch(clearCheckins())
+    checkin => dispatch(removeCheckin(checkin.id))
   )
 );
 

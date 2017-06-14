@@ -39,7 +39,6 @@ class CheckinIndex extends React.Component {
             return
           }
           let checkin = checkins[key]
-          console.log(checkin.user_id);
           return(
             <CheckinItem
               checkin={checkin}
