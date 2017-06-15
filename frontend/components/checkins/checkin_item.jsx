@@ -19,7 +19,9 @@ class CheckinItem extends React.Component {
     let deleteButton = null
     if (this.props.deletable) {
       deleteButton = (
-        <button onClick={this.deleteCheckin.bind(this)}>Delete</button>
+        <button onClick={this.deleteCheckin.bind(this)}
+          className='delete-checkin'
+          >Delete Checkin</button>
       )
     }
 
@@ -39,8 +41,8 @@ class CheckinItem extends React.Component {
             initialRate={checkin.rating}
             empty="fa fa-star-o fa-2x"
             full="fa fa-star fa-2x"/>
-          {deleteButton}
         </div>
+        {deleteButton}
         {checkinImage}
         <img className='checkin-icon' src={checkin.drink_image} />
         <h4>{ checkin.time_ago } ago</h4>
