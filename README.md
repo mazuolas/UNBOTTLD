@@ -31,7 +31,7 @@ The drinks table stores the average rating for each beer, and currently that ave
 
 
 ### Search
-
+![search]
 Updating the beer list in real time as the user types was implemented by sending an ajax request with the value of the search sent as a query parameter every time the search input field changes.  The filtering is handled on the back end by the `pg_search` gem.
 ``` Ruby
 pg_search_scope :search_by_name,
@@ -59,3 +59,4 @@ Allow users to comment on other people's checkins.
 Improve the initial load time by only sending the code needed for the current page being viewed.
 
 [side bar]: ./docs/screens/side_bar.png
+[search]: ./docs/screens/unbottld_search.gif
